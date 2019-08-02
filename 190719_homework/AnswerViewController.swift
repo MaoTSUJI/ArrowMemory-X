@@ -47,7 +47,8 @@ class AnswerViewController: UIViewController {
         arrow3.layer.borderColor = UIColor.lightGray.cgColor // 枠線の色
         arrow3.layer.cornerRadius = 10.0  // 角丸のサイズ
         
-        
+        // Backボタンを削除
+        navigationController?.navigationBar.isHidden = true
     }
     
     @IBAction func tapped(_ sender: UITapGestureRecognizer) {

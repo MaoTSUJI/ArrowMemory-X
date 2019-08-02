@@ -62,6 +62,8 @@ class ResultViewController: UIViewController {
         designLabel.layer.borderColor = UIColor.lightGray.cgColor // 枠線の色
         designLabel.layer.cornerRadius = 10.0  // 角丸のサイズ
         
+        // Backボタンを削除
+        navigationController?.navigationBar.isHidden = true
     }
     
     
