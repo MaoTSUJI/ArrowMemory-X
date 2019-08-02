@@ -17,8 +17,19 @@ class ViewController: UIViewController {
 
     let levelArray = ["easy": 3,"normal": 5,"difficult": 7]
     
+    // ここもっと短くしたい！！
     @IBAction func didClickEasy(_ sender: UIButton) {
         let inputValue = levelArray["easy"]
+        performSegue(withIdentifier: "toQuiz", sender: inputValue)
+    }
+    
+    @IBAction func didClickNormal(_ sender: UIButton) {
+        let inputValue = levelArray["normal"]
+        performSegue(withIdentifier: "toQuiz", sender: inputValue)
+    }
+    
+    @IBAction func didClickDifficult(_ sender: UIButton) {
+        let inputValue = levelArray["difficult"]
         performSegue(withIdentifier: "toQuiz", sender: inputValue)
     }
     
@@ -26,7 +37,6 @@ class ViewController: UIViewController {
         if segue.identifier == "toQuiz" {
             let nextVC = segue.destination as! QuizViewController
             nextVC.arrowNum = sender as! Int
-            
         }
     }
 

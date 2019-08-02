@@ -70,11 +70,19 @@ class ResultViewController: UIViewController {
     
     
     @IBAction func didClickAgain(_ sender: UIButton) {
-        performSegue(withIdentifier: "backToQuiz", sender: nil)
+        let inputValue = arrayValue[0].count
+        performSegue(withIdentifier: "backToQuiz", sender: inputValue)
     }
 
     @IBAction func didClickHome(_ sender: UIButton) {
         performSegue(withIdentifier: "backToHome", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "backToQuiz" {
+            let nextVC = segue.destination as! QuizViewController
+            nextVC.arrowNum = sender as! Int
+        }
     }
     
     func sayComment(count: Int) -> String {

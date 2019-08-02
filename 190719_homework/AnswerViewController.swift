@@ -116,7 +116,7 @@ class AnswerViewController: UIViewController {
                 arrow3.textColor = .red
             }
         }
-        print(count)
+        
     }
     
  
