@@ -19,6 +19,9 @@ class QuizViewController: UIViewController {
     var arrowRandomArray:[String] = []
     var numRandomArray:[Int] = []
     
+    // 生成するラベルを入れる配列を用意
+    var labelArray:[Any] = []
+    
     // FontAwesomeで矢印配列の用意
     let arrowLeft = String.fontAwesomeIcon(name: .arrowLeft)
     let arrowRight = String.fontAwesomeIcon(name: .arrowRight)
@@ -26,9 +29,26 @@ class QuizViewController: UIViewController {
     let arrowDown = String.fontAwesomeIcon(name: .arrowDown)
     let dotCircle = String.fontAwesomeIcon(name: .dotCircle)
     lazy var arrowArray = [arrowLeft, arrowRight, arrowUp, arrowDown, dotCircle]
-    // デバッグ用
+    // 下2行デバッグ用
     let arrowArrayString = ["arrowLeft", "arrowRight", "arrowUp", "arrowDown", "dotCircle"]
     var arrowRandomArrayString:[String] = []
+    
+    // スクリーンの幅・高さを取得
+    let screenWidth = Int(UIScreen.main.bounds.size.width)
+    let screenHeight = Int(UIScreen.main.bounds.size.height)
+    
+    let constInterval = 0.2 // 矢印のセルとセルの感覚
+    let constEdge = 0.5 // セルの端とスクリーンの端との感覚
+    
+    // 各定数に応じたセルサイズの算出
+    lazy var molecule = Double(screenWidth)
+    lazy var denominator = (1 + constInterval) * Double(arrowNum) + 2 * constEdge - constInterval
+    lazy var cellWidth = molecule / denominator     // セルのサイズ
+    // ラベルの初期位置、次のセルとの間隔を算出
+    lazy var x = constEdge * cellWidth
+    lazy var y = Double(screenHeight) * 0.2
+    lazy var d = cellWidth + constInterval * cellWidth
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +67,11 @@ class QuizViewController: UIViewController {
         print("矢印の確認　\(arrowRandomArrayString)")
         
         // セル、中身の生成
-        makeCell(arrowNum: arrowNum)
+        makeLabel(arrowNum: arrowNum)
+        
+        for i in 0..<labelArray.count {
+            makeLabelContent(label: labelArray[i] as? UILabel, num: i, cellWidth: cellWidth)
+        }
         
     }
     
@@ -65,40 +89,28 @@ class QuizViewController: UIViewController {
     }
 
     // セルのラベル作成
-    func makeCell(arrowNum: Int) {
-        // スクリーンの幅・高さを取得
-        let screenWidth = Int(UIScreen.main.bounds.size.width)
-        let screenHeight = Int(UIScreen.main.bounds.size.height)
-        var cellWidth = 0.0   // 矢印のセルサイズ （これは変数）
-        let constInterval = 0.2 // 矢印のセルとセルの感覚
-        let constEdge = 0.5 // セルの端とスクリーンの端との感覚
-        
-        // 各定数に応じたセルサイズの算出
-        let molecule = Double(screenWidth)
-        let denominator = (1 + constInterval) * Double(arrowNum) + 2 * constEdge - constInterval
-        cellWidth = molecule / denominator
-        // ラベルの初期位置、次のセルとの間隔を算出
-        let x = constEdge * cellWidth
-        let y = Double(screenHeight) * 0.2
-        let d = cellWidth + constInterval * cellWidth
+    func makeLabel(arrowNum: Int) {
         
         // ラベルの生成
         for i in 0..<arrowNum {
             let label = UILabel(frame: CGRect(x: x + (d * Double(i)), y: y , width: cellWidth, height: cellWidth))
-            
-            // ラベルの中身生成
-            label.font = UIFont.fontAwesome(ofSize: CGFloat(cellWidth), style: .solid)
-            label.text = arrowRandomArray[i]
-            label.textAlignment = NSTextAlignment.center
             
             // ラベルデザイン
             label.layer.borderWidth = 1.0
             label.layer.borderColor = UIColor.darkGray.cgColor // 枠線の色
             label.layer.cornerRadius = CGFloat(cellWidth * 0.2)  // 角丸のサイズ
             
+            labelArray.append(label)
+            
             view.addSubview(label)
         }
-        
+    }
+    
+    // ラベルの中身生成
+    func makeLabelContent(label: UILabel!, num: Int, cellWidth: Double) {
+        label.font = UIFont.fontAwesome(ofSize: CGFloat(cellWidth), style: .solid)
+        label.text = arrowRandomArray[num]  // FontAwesomeで出力
+        label.textAlignment = NSTextAlignment.center    // 中央寄せ
     }
 
 
