@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FontAwesome_swift
 
 class QuizViewController: UIViewController {
 
@@ -39,8 +40,9 @@ class QuizViewController: UIViewController {
         
         // ラベルの生成
         for i in 0..<arrowNum {
-            let label = UILabel(frame: CGRect(x: 200 + (50 * i), y: 200 , width: 200, height: 100))
-            label.text = "→"
+            let label = UILabel(frame: CGRect(x: 50 + (100 * i), y: 80 , width: 80, height: 100))
+            label.font = UIFont.fontAwesome(ofSize: 100, style: .solid)
+            label.text = String.fontAwesomeIcon(name: .arrow-up)
             view.addSubview(label)
         }
     }
