@@ -15,75 +15,70 @@ class AnswerViewController: UIViewController {
     @IBOutlet weak var arrow3: UILabel!
     
     // 前のページから受け取る変数
-    // 正しい答えの配列
-    var correctAnswerArray:[String] = ["空やで"]
-    // あなたの回答
-    var yourAnswerArray:[String] = ["1","2","3"]
+    // 正しい答えの配列番号
+    var correctNumArray:[Int] = []
+    // あなたの回答の配列番号
+    var yourNumArray:[Int] = []
     // スワイプまたはタップされた回数をカウントする変数
     var count = 0
     
-    var inputArrow :String! = ""
+    var inputArrowNum :Int = 0
+    
+    // 冗長やから省略したい
+    ////////////////////////////////////////////////////////////////////////////////
+    // FontAwesomeで矢印配列の用意
+    let arrowLeft = String.fontAwesomeIcon(name: .arrowLeft)
+    let arrowRight = String.fontAwesomeIcon(name: .arrowRight)
+    let arrowUp = String.fontAwesomeIcon(name: .arrowUp)
+    let arrowDown = String.fontAwesomeIcon(name: .arrowDown)
+    let dotCircle = String.fontAwesomeIcon(name: .dotCircle)
+    lazy var arrowArray = [arrowLeft, arrowRight, arrowUp, arrowDown, dotCircle]
+    let arrowArrayString = ["arrowLeft", "arrowRight", "arrowUp", "arrowDown", "dotCircle"]
+    ////////////////////////////////////////////////////////////////////////////////
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        arrow1.text = correctAnswerArray[0]
-        arrow2.text = correctAnswerArray[1]
-        arrow3.text = correctAnswerArray[2]
-        
-        arrow1.textColor = .clear
-        arrow2.textColor = .clear
-        arrow3.textColor = .clear
-        
-        arrow1.layer.borderWidth = 1.0
-        arrow1.layer.borderColor = UIColor.darkGray.cgColor // 枠線の色
-        arrow1.layer.cornerRadius = 10.0  // 角丸のサイズ
-    
-        arrow2.layer.borderWidth = 1.0
-        arrow2.layer.borderColor = UIColor.lightGray.cgColor // 枠線の色
-        arrow2.layer.cornerRadius = 10.0  // 角丸のサイズ
-    
-        arrow3.layer.borderWidth = 1.0
-        arrow3.layer.borderColor = UIColor.lightGray.cgColor // 枠線の色
-        arrow3.layer.cornerRadius = 10.0  // 角丸のサイズ
+        // セルの作成(ダミー)
+        makeCell(arrowNum: correctNumArray.count)
         
         // Backボタンを削除
         navigationController?.navigationBar.isHidden = true
     }
     
-    @IBAction func tapped(_ sender: UITapGestureRecognizer) {
-        inputArrow = "・"
-        didAction()
-    }
-    
+    // スワイプ、またはタップをした時の処理
     @IBAction func switeLeft(_ sender: UISwipeGestureRecognizer) {
-        inputArrow = "←"
+        inputArrowNum = 0
         didAction()
     }
-    
     @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
-        inputArrow = "→"
+        inputArrowNum = 1
         didAction()
     }
-    
     @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
-        inputArrow = "↑"
+        inputArrowNum = 2
+        didAction()
+    }
+    @IBAction func swipeDown(_ sender: UISwipeGestureRecognizer) {
+        inputArrowNum = 3
+        didAction()
+    }
+    @IBAction func tapped(_ sender: UITapGestureRecognizer) {
+        inputArrowNum = 4
         didAction()
     }
     
-    @IBAction func swipeDown(_ sender: UISwipeGestureRecognizer) {
-        inputArrow = "↓"
-        didAction()
+    func insertArray() {
+        // 入力値の確認
+        let value = inputArrowNum
+        yourNumArray.append(value)
+
     }
 
-    // タップまたはスワイプのアクションを起こしたとき、
+    // 入力した時の処理
     func didAction() {
         
-        // 入力値の確認
-        let value = inputArrow
-        yourAnswerArray[count] = value!
-        // 入力値（配列）の確認
-        print(yourAnswerArray)
+        
         // 動作したらカウントアップ
         count += 1
         
@@ -140,5 +135,47 @@ class AnswerViewController: UIViewController {
             nextVC.arrayValue = sender as! [[String]]
         }
     }
+
+// 冗長やから省略したい
+////////////////////////////////////////////////////////////////////////////////
+    // セルのラベル作成　（ダミー）
+    func makeCell(arrowNum: Int) {
+        // スクリーンの幅・高さを取得
+        let screenWidth = Int(UIScreen.main.bounds.size.width)
+        let screenHeight = Int(UIScreen.main.bounds.size.height)
+        var cellWidth = 0.0   // 矢印のセルサイズ （これは変数）
+        let constInterval = 0.2 // 矢印のセルとセルの感覚
+        let constEdge = 0.5 // セルの端とスクリーンの端との感覚
+        
+        // 各定数に応じたセルサイズの算出
+        let molecule = Double(screenWidth)
+        let denominator = (1 + constInterval) * Double(arrowNum) + 2 * constEdge - constInterval
+        cellWidth = molecule / denominator
+        // ラベルの初期位置、次のセルとの間隔を算出
+        let x = constEdge * cellWidth
+        let y = Double(screenHeight) * 0.2
+        let d = cellWidth + constInterval * cellWidth
+        
+        // ラベルの生成
+        for i in 0..<arrowNum {
+            let label = UILabel(frame: CGRect(x: x + (d * Double(i)), y: y , width: cellWidth, height: cellWidth))
+            
+            // ラベルの中身生成
+            label.font = UIFont.fontAwesome(ofSize: CGFloat(cellWidth), style: .solid)
+            
+            label.textAlignment = NSTextAlignment.center
+            
+            // ラベルデザイン
+            label.layer.borderWidth = 1.0
+            label.layer.borderColor = UIColor.darkGray.cgColor // 枠線の色
+            label.layer.cornerRadius = CGFloat(cellWidth * 0.2)  // 角丸のサイズ
+            
+            view.addSubview(label)
+        }
+    }
+////////////////////////////////////////////////////////////////////////////////
+
+
+    
     
 }
