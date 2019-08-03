@@ -15,10 +15,12 @@ class AnswerViewController: UIViewController {
     @IBOutlet weak var arrow3: UILabel!
     
     // 前のページから受け取る変数
+    var value:[Any] = []
+    
     // 正しい答えの配列番号
-    var correctNumArray:[Int] = []
+    var correctNumArray:[Int] = [1,2,3]
     // あなたの回答の配列番号
-    var yourNumArray:[Int] = []
+    var yourNumArray:[Int] = [1,2,3]
     // スワイプまたはタップされた回数をカウントする変数
     var count = 0
     
@@ -39,8 +41,6 @@ class AnswerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // セルの作成(ダミー)
-        makeCell(arrowNum: correctNumArray.count)
         
         // Backボタンを削除
         navigationController?.navigationBar.isHidden = true
@@ -70,8 +70,8 @@ class AnswerViewController: UIViewController {
     
     func insertArray() {
         // 入力値の確認
-        let value = inputArrowNum
-        yourNumArray.append(value)
+        let num = inputArrowNum
+        yourNumArray.append(num)
 
     }
 
@@ -84,8 +84,8 @@ class AnswerViewController: UIViewController {
         
         // 答えと一致した時テキストカラーを黒、一致しなかったとき赤
         if count == 1 {
-            arrow1.text = yourAnswerArray[0]
-            if correctAnswerArray[0] == yourAnswerArray[0] {
+            inputArrowNum = yourNumArray[0]
+            if correctNumArray[0] == yourNumArray[0] {
                 arrow1.textColor = .black
             } else {
                 arrow1.textColor = .red
@@ -94,8 +94,8 @@ class AnswerViewController: UIViewController {
             arrow2.layer.borderColor = UIColor.darkGray.cgColor // 枠線の色
 
         } else if count == 2 {
-            arrow2.text = yourAnswerArray[1]
-            if correctAnswerArray[1] == yourAnswerArray[1] {
+            inputArrowNum = yourNumArray[1]
+            if correctNumArray[1] == yourNumArray[1] {
                 arrow2.textColor = .black
             } else {
                 arrow2.textColor = .red
@@ -104,8 +104,8 @@ class AnswerViewController: UIViewController {
             arrow3.layer.borderColor = UIColor.darkGray.cgColor // 枠線の色
             
         } else if count == 3 {
-            arrow3.text = yourAnswerArray[2]
-            if correctAnswerArray[2] == yourAnswerArray[2] {
+            inputArrowNum = yourNumArray[2]
+            if correctNumArray[2] == yourNumArray[2] {
                 arrow3.textColor = .black
             } else {
                 arrow3.textColor = .red
@@ -118,9 +118,9 @@ class AnswerViewController: UIViewController {
     
     @IBAction func didClickToResult(_ sender: UIButton) {
         // 複数の配列を送るために、多重配列を用意
-        var arrays:[[String]] = [[],[]]
-        arrays[0] = correctAnswerArray
-        arrays[1] = yourAnswerArray
+        var arrays:[[Int]] = [[],[]]
+        arrays[0] = correctNumArray
+        arrays[1] = yourNumArray
    
 //        print(arrays)
         
@@ -135,46 +135,6 @@ class AnswerViewController: UIViewController {
             nextVC.arrayValue = sender as! [[String]]
         }
     }
-
-// 冗長やから省略したい
-////////////////////////////////////////////////////////////////////////////////
-    // セルのラベル作成　（ダミー）
-    func makeCell(arrowNum: Int) {
-        // スクリーンの幅・高さを取得
-        let screenWidth = Int(UIScreen.main.bounds.size.width)
-        let screenHeight = Int(UIScreen.main.bounds.size.height)
-        var cellWidth = 0.0   // 矢印のセルサイズ （これは変数）
-        let constInterval = 0.2 // 矢印のセルとセルの感覚
-        let constEdge = 0.5 // セルの端とスクリーンの端との感覚
-        
-        // 各定数に応じたセルサイズの算出
-        let molecule = Double(screenWidth)
-        let denominator = (1 + constInterval) * Double(arrowNum) + 2 * constEdge - constInterval
-        cellWidth = molecule / denominator
-        // ラベルの初期位置、次のセルとの間隔を算出
-        let x = constEdge * cellWidth
-        let y = Double(screenHeight) * 0.2
-        let d = cellWidth + constInterval * cellWidth
-        
-        // ラベルの生成
-        for i in 0..<arrowNum {
-            let label = UILabel(frame: CGRect(x: x + (d * Double(i)), y: y , width: cellWidth, height: cellWidth))
-            
-            // ラベルの中身生成
-            label.font = UIFont.fontAwesome(ofSize: CGFloat(cellWidth), style: .solid)
-            
-            label.textAlignment = NSTextAlignment.center
-            
-            // ラベルデザイン
-            label.layer.borderWidth = 1.0
-            label.layer.borderColor = UIColor.darkGray.cgColor // 枠線の色
-            label.layer.cornerRadius = CGFloat(cellWidth * 0.2)  // 角丸のサイズ
-            
-            view.addSubview(label)
-        }
-    }
-////////////////////////////////////////////////////////////////////////////////
-
 
     
     

@@ -10,10 +10,6 @@ import UIKit
 import FontAwesome_swift
 
 class QuizViewController: UIViewController {
-
-    @IBOutlet weak var arrowQuiz1: UILabel!
-    @IBOutlet weak var arrowQuiz2: UILabel!
-    @IBOutlet weak var arrowQuiz3: UILabel!
     
     var arrowNum = 3    // 前の画面から持ってきた値, レベルに応じた矢印の数3,5,7
     var arrowRandomArray:[String] = []
@@ -53,7 +49,6 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        var arrowArray = [arrowLeft, arrowRight, arrowUp, arrowDown, dotCircle]
         // 変数iを使わないのであれば、[_]で代用すれば良い
         for _ in 0..<arrowNum {
             // 0から5までのランダムな変数を指定
@@ -77,14 +72,15 @@ class QuizViewController: UIViewController {
     
     // ランダムな番号の配列で返す
     @IBAction func didClickRemember(_ sender: UIButton) {
-        let inputValue = numRandomArray
+        
+        let inputValue:[Any] = [numRandomArray, labelArray]
         performSegue(withIdentifier: "toAnswer", sender: inputValue)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAnswer" {
             let nextVC = segue.destination as! AnswerViewController
-            nextVC.correctNumArray = sender as! [Int]
+            nextVC.value = sender as! [Any]
         }
     }
 
@@ -99,7 +95,7 @@ class QuizViewController: UIViewController {
             label.layer.borderWidth = 1.0
             label.layer.borderColor = UIColor.darkGray.cgColor // 枠線の色
             label.layer.cornerRadius = CGFloat(cellWidth * 0.2)  // 角丸のサイズ
-            
+            // 生成したラベルを配列に格納
             labelArray.append(label)
             
             view.addSubview(label)
