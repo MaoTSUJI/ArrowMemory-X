@@ -15,34 +15,65 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var arrowQuiz2: UILabel!
     @IBOutlet weak var arrowQuiz3: UILabel!
     
-    var arrowNum = 0    // 前の画面から持ってきた値, レベルに応じた矢印の数3,5,7
-    let arrowArray:[String] = ["←", "→", "↑", "↓", "・"]
+    var arrowNum = 3    // 前の画面から持ってきた値, レベルに応じた矢印の数3,5,7
     var arrowRandomArray:[String] = []
+    var numRandomArray:[Int] = []
     
-    //インスタンスプロパティの初期化式に他のインスタンス変数を使用することはできない
-    // クラスに直接処理を書いてはいけない、関数の中で処理を書く
-    // クラスに書いていいのは、プロパティ(変数の宣言)とメソッド(関数の宣言)
-    // 処理を書くならメソッドの中に
+    // 矢印配列の用意
+    let arrowLeft = String.fontAwesomeIcon(name: .arrowLeft)
+    let arrowRight = String.fontAwesomeIcon(name: .arrowRight)
+    let arrowUp = String.fontAwesomeIcon(name: .arrowUp)
+    let arrowDown = String.fontAwesomeIcon(name: .arrowDown)
+    let dotCircle = String.fontAwesomeIcon(name: .dotCircle)
+    lazy var arrowArray = [arrowLeft, arrowRight, arrowUp, arrowDown, dotCircle]
+    let arrowArrayString = ["arrowLeft", "arrowRight", "arrowUp", "arrowDown", "dotCircle"]
+    
+    // スクリーンの幅・高さを取得
+    let screenWidth = Int(UIScreen.main.bounds.size.width)
+    let screenHeight = Int(UIScreen.main.bounds.size.height)
+    var cellWidth = 0.0   // 矢印のセルサイズ （これは変数）
+    let constInterval = 0.2 // 矢印のセルとセルの感覚
+    let constEdge = 0.5 // セルの端とスクリーンの端との感覚
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        var arrowArray = [arrowLeft, arrowRight, arrowUp, arrowDown, dotCircle]
         // 変数iを使わないのであれば、[_]で代用すれば良い
         for _ in 0..<arrowNum {
             // 0から5までのランダムな変数を指定
             var randomNum = Int.random(in: 0 ..< arrowArray.count)
             arrowRandomArray.append(arrowArray[randomNum])
+            numRandomArray.append(randomNum)
         }
         
-        arrowQuiz1.text = arrowRandomArray[0]
-        arrowQuiz2.text = arrowRandomArray[1]
-        arrowQuiz3.text = arrowRandomArray[2]
+        print(numRandomArray)
+        print(arrowRandomArray)
+        
+        // 各定数に応じたセルサイズの算出
+        let molecule = Double(screenWidth)
+        let denominator = (1 + constInterval) * Double(arrowNum) + 2 * constEdge - constInterval
+        cellWidth = molecule / denominator
+        
+        let x = constEdge * cellWidth
+        let y = Double(screenHeight) * 0.2
+        let d = cellWidth + constInterval * cellWidth
+        
+        let max = Double(arrowNum) * cellWidth + (Double(arrowNum) - 1.0) * constInterval * cellWidth + 2 * constEdge * cellWidth
         
         // ラベルの生成
         for i in 0..<arrowNum {
-            let label = UILabel(frame: CGRect(x: 50 + (100 * i), y: 80 , width: 80, height: 100))
-            label.font = UIFont.fontAwesome(ofSize: 100, style: .solid)
-            label.text = String.fontAwesomeIcon(name: .arrow-up)
+            let label = UILabel(frame: CGRect(x: x + (d * Double(i)), y: y , width: cellWidth, height: cellWidth))
+            // セルの中身生成
+            label.font = UIFont.fontAwesome(ofSize: CGFloat(cellWidth), style: .solid)
+            label.text = arrowRandomArray[i]
+            label.textAlignment = NSTextAlignment.center
+            
+            // ラベルデザイン
+            label.layer.borderWidth = 1.0
+            label.layer.borderColor = UIColor.darkGray.cgColor // 枠線の色
+            label.layer.cornerRadius = CGFloat(cellWidth * 0.2)  // 角丸のサイズ
+            
             view.addSubview(label)
         }
     }
@@ -58,6 +89,7 @@ class QuizViewController: UIViewController {
             nextVC.correctAnswerArray = sender as! [String]
         }
     }
+
 
 
 }

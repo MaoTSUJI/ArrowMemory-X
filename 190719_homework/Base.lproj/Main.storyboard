@@ -153,7 +153,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uo0-gH-SUe">
                                 <rect key="frame" x="125" y="538" width="124" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="結果へ"/>
+                                <state key="normal" title="結果発表"/>
                                 <connections>
                                     <action selector="didClickToResult:" destination="0L3-dm-tWV" eventType="touchUpInside" id="oVa-7Z-OkU"/>
                                 </connections>
@@ -345,15 +345,15 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xa9-yo-KKr">
                                 <rect key="frame" x="123" y="535" width="125" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="もっかいやる？"/>
+                                <state key="normal" title="もう一度"/>
                                 <connections>
                                     <action selector="didClickAgain:" destination="gDV-gV-Bfh" eventType="touchUpInside" id="fE4-uk-fTl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhd-JU-8iG">
-                                <rect key="frame" x="123" y="595" width="125" height="52"/>
+                                <rect key="frame" x="123" y="585" width="125" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="もうええわ"/>
+                                <state key="normal" title="ホームへ"/>
                                 <connections>
                                     <action selector="didClickHome:" destination="gDV-gV-Bfh" eventType="touchUpInside" id="XsZ-64-1Rh"/>
                                 </connections>
@@ -400,6 +400,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mj4-dr-sYP"/>
+        <segue reference="IXm-WP-LGt"/>
+        <segue reference="jN6-ag-cW3"/>
     </inferredMetricsTieBreakers>
 </document>
