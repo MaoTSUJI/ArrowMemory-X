@@ -23,10 +23,10 @@ class QuizViewController: UIViewController {
     let arrowRight = String.fontAwesomeIcon(name: .arrowRight)
     let arrowUp = String.fontAwesomeIcon(name: .arrowUp)
     let arrowDown = String.fontAwesomeIcon(name: .arrowDown)
-    let dotCircle = String.fontAwesomeIcon(name: .dotCircle)
-    lazy var arrowArray = [arrowLeft, arrowRight, arrowUp, arrowDown, dotCircle]
+//    let dotCircle = String.fontAwesomeIcon(name: .dotCircle)
+    lazy var arrowArray = [arrowLeft, arrowRight, arrowUp, arrowDown]
     // 下2行デバッグ用
-    let arrowArrayString = ["arrowLeft", "arrowRight", "arrowUp", "arrowDown", "dotCircle"]
+    let arrowArrayString = ["arrowLeft", "arrowRight", "arrowUp", "arrowDown"]
     var arrowRandomArrayString:[String] = []
     
     // スクリーンの幅・高さを取得
@@ -53,6 +53,7 @@ class QuizViewController: UIViewController {
         for _ in 0..<arrowNum {
             // 0から5までのランダムな変数を指定
             let randomNum = Int.random(in: 0 ..< arrowArray.count)
+            numRandomArray.append(randomNum)
             arrowRandomArray.append(arrowArray[randomNum])
             // 確認用
             arrowRandomArrayString.append(arrowArrayString[randomNum])
@@ -73,14 +74,17 @@ class QuizViewController: UIViewController {
     // ランダムな番号の配列で返す
     @IBAction func didClickRemember(_ sender: UIButton) {
         
-        let inputValue:[Any] = [numRandomArray, labelArray]
+        let inputValue:[[Any]] = [numRandomArray, labelArray]
         performSegue(withIdentifier: "toAnswer", sender: inputValue)
+        
+        print("inputValueの中身\(inputValue)")
     }
     
+    // 値を渡す準備
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAnswer" {
             let nextVC = segue.destination as! AnswerViewController
-            nextVC.value = sender as! [Any]
+            nextVC.value = sender as! [[Any]]
         }
     }
 
