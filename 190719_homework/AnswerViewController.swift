@@ -26,6 +26,9 @@ class AnswerViewController: UIViewController {
     
     var inputArrowNum :Int = 0
     
+    // 生成するラベルを入れる配列を用意
+    var labelArray:[Any] = []
+    
     // 冗長やから省略したい
     ////////////////////////////////////////////////////////////////////////////////
     // FontAwesomeで矢印配列の用意
@@ -103,10 +106,23 @@ class AnswerViewController: UIViewController {
         print("value0: \(value0)")
         print("value1: \(value1)")
 
+        // 入力値を配列に格納
+        yourNumArray.append(inputArrowNum)
+        
+        // セルの中に矢印を記入
+        makeLabelContent(label: labelArray[count] as? UILabel, arrowId: inputArrowNum, cellWidth: Double((labelArray[count] as! UILabel).bounds.height))
+        
+        // 答えと一致値したとき、テキストカラーを黒
+        if correctNumArray[count] == inputArrowNum {
+            (labelArray[count] as! UILabel).textColor = .black
+        }else {
+            (labelArray[count] as! UILabel).textColor = .red
+            
+        }
+        
         // 動作したらカウントアップ
         count += 1
-        
-        // 答えと一致した時テキストカラーを黒、一致しなかったとき赤
+////         答えと一致した時テキストカラーを黒、一致しなかったとき赤
 //        if count == 1 {
 //            inputArrowNum = yourNumArray[0]
 //            if correctNumArray[0] == yourNumArray[0] {
@@ -135,6 +151,8 @@ class AnswerViewController: UIViewController {
 //                arrow3.textColor = .red
 //            }
 //        }
+        
+        
         
     }
     
@@ -190,12 +208,19 @@ class AnswerViewController: UIViewController {
             label.layer.borderColor = UIColor.darkGray.cgColor // 枠線の色
             label.layer.cornerRadius = CGFloat(cellWidth * 0.2)  // 角丸のサイズ
             // 生成したラベルを配列に格納
-//            labelArray.append(label)
+            labelArray.append(label)
             
             view.addSubview(label)
         }
     }
     
+    
+    // ラベルの中身生成
+    func makeLabelContent(label: UILabel!, arrowId: Int, cellWidth: Double) {
+        label.font = UIFont.fontAwesome(ofSize: CGFloat(cellWidth), style: .solid)
+        label.text = arrowArray[arrowId]  // FontAwesomeで出力
+        label.textAlignment = NSTextAlignment.center    // 中央寄せ
+    }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
     
 }

@@ -32,23 +32,6 @@ class QuizViewController: UIViewController {
     var arrowRandomArrayString:[String] = []
     
     
-    // 矢印の表示位置を設定するパラメータ
-    // スクリーンの幅・高さを取得
-    let screenWidth = Int(UIScreen.main.bounds.size.width)
-    let screenHeight = Int(UIScreen.main.bounds.size.height)
-    
-    let constInterval = 0.2 // 矢印のセルとセルの感覚
-    let constEdge = 0.5 // セルの端とスクリーンの端との感覚
-    // 各定数に応じたセルサイズの算出
-    lazy var molecule = Double(screenWidth)
-    lazy var denominator = (1 + constInterval) * Double(arrowNum) + 2 * constEdge - constInterval
-    lazy var cellWidth = molecule / denominator     // セルのサイズ
-    // ラベルの初期位置、次のセルとの間隔を算出
-    lazy var x = constEdge * cellWidth
-    lazy var y = Double(screenHeight) * 0.2
-    lazy var d = cellWidth + constInterval * cellWidth
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -74,7 +57,7 @@ class QuizViewController: UIViewController {
         makeLabel(arrowNum: arrowNum)
         
         for i in 0..<labelArray.count {
-            makeLabelContent(label: labelArray[i] as? UILabel, num: i, cellWidth: cellWidth)
+            makeLabelContent(label: labelArray[i] as? UILabel, arrowId: i, cellWidth: Double((labelArray[i] as! UILabel).bounds.height))
         }
         
     }
@@ -99,6 +82,22 @@ class QuizViewController: UIViewController {
     // セルのラベル作成
     func makeLabel(arrowNum: Int) {
         
+        // 矢印の表示位置を設定するパラメータ
+        // スクリーンの幅・高さを取得
+        let screenWidth = Int(UIScreen.main.bounds.size.width)
+        let screenHeight = Int(UIScreen.main.bounds.size.height)
+        
+        let constInterval = 0.2 // 矢印のセルとセルの感覚
+        let constEdge = 0.5 // セルの端とスクリーンの端との感覚
+        // 各定数に応じたセルサイズの算出
+        let molecule = Double(screenWidth)
+        let denominator = (1 + constInterval) * Double(arrowNum) + 2 * constEdge - constInterval
+        let cellWidth = molecule / denominator     // セルのサイズ
+        // ラベルの初期位置、次のセルとの間隔を算出
+        let x = constEdge * cellWidth
+        let y = Double(screenHeight) * 0.2
+        let d = cellWidth + constInterval * cellWidth
+        
         // ラベルの生成
         for i in 0..<arrowNum {
             let label = UILabel(frame: CGRect(x: x + (d * Double(i)), y: y , width: cellWidth, height: cellWidth))
@@ -115,9 +114,9 @@ class QuizViewController: UIViewController {
     }
     
     // ラベルの中身生成
-    func makeLabelContent(label: UILabel!, num: Int, cellWidth: Double) {
+    func makeLabelContent(label: UILabel!, arrowId: Int, cellWidth: Double) {
         label.font = UIFont.fontAwesome(ofSize: CGFloat(cellWidth), style: .solid)
-        label.text = arrowRandomArray[num]  // FontAwesomeで出力
+        label.text = arrowRandomArray[arrowId]  // FontAwesomeで出力
         label.textAlignment = NSTextAlignment.center    // 中央寄せ
     }
 
