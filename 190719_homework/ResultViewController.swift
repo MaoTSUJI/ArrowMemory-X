@@ -10,6 +10,9 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
+    @IBOutlet weak var replyButton: UIButton!
+    @IBOutlet weak var homeButton: UIButton!
+    
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
@@ -34,6 +37,16 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        replyButton.backgroundColor = .lightGray
+        replyButton.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
+        replyButton.layer.cornerRadius = 18
+        replyButton.clipsToBounds = true
+        
+        homeButton.backgroundColor = .lightGray
+        homeButton.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
+        homeButton.layer.cornerRadius = 18
+        homeButton.clipsToBounds = true
+        
         // 正解とあなたの答えの配列分割
         correctAnswerArray = arrayValue[0]
         yourAnswer = arrayValue[1]

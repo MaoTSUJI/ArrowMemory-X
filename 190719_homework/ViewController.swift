@@ -10,9 +10,29 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet weak var easyButton: UIButton!
+    @IBOutlet weak var normalButton: UIButton!
+    @IBOutlet weak var difficultButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        easyButton.backgroundColor = .lightGray
+        easyButton.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
+        easyButton.layer.cornerRadius = 18
+        easyButton.clipsToBounds = true
+        
+        normalButton.backgroundColor = .lightGray
+        normalButton.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
+        normalButton.layer.cornerRadius = 18
+        normalButton.clipsToBounds = true
+        
+        difficultButton.backgroundColor = .lightGray
+        difficultButton.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
+        difficultButton.layer.cornerRadius = 18
+        difficultButton.clipsToBounds = true
+        
     }
 
     let levelArray = ["easy": 3,"normal": 5,"difficult": 7]

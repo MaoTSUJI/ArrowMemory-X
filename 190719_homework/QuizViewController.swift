@@ -11,6 +11,8 @@ import FontAwesome_swift
 
 class QuizViewController: UIViewController {
     
+    @IBOutlet weak var okButton: UIButton!
+    
     var arrowNum = 3    // 前の画面から持ってきた値, レベルに応じた矢印の数3,5,7
     var arrowRandomArray:[String] = []
     var numRandomArray:[Int] = []
@@ -29,13 +31,14 @@ class QuizViewController: UIViewController {
     let arrowArrayString = ["arrowLeft", "arrowRight", "arrowUp", "arrowDown"]
     var arrowRandomArrayString:[String] = []
     
+    
+    // 矢印の表示位置を設定するパラメータ
     // スクリーンの幅・高さを取得
     let screenWidth = Int(UIScreen.main.bounds.size.width)
     let screenHeight = Int(UIScreen.main.bounds.size.height)
     
     let constInterval = 0.2 // 矢印のセルとセルの感覚
     let constEdge = 0.5 // セルの端とスクリーンの端との感覚
-    
     // 各定数に応じたセルサイズの算出
     lazy var molecule = Double(screenWidth)
     lazy var denominator = (1 + constInterval) * Double(arrowNum) + 2 * constEdge - constInterval
@@ -49,6 +52,11 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        okButton.backgroundColor = .lightGray
+        okButton.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
+        okButton.layer.cornerRadius = 18
+        okButton.clipsToBounds = true
+        
         // 変数iを使わないのであれば、[_]で代用すれば良い
         for _ in 0..<arrowNum {
             // 0から5までのランダムな変数を指定
@@ -115,4 +123,3 @@ class QuizViewController: UIViewController {
 
 
 }
-
