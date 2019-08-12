@@ -74,10 +74,10 @@ class ResultViewController: UIViewController {
         }
         
         resultLabel.text = "\(yourNumArray.count)問中\(correctCount)問正解！"
-        commentLabel.text = sayComment(count: correctCount)
+//        commentLabel.text = sayComment(count: correctCount)
 
         // ラベルのセルを作成
-        let correctAnswerLabelArray = makeLabel(arrowNum: yourNumArray.count, heightLabelRate: 0.4)
+        let correctAnswerLabelArray = makeLabel(arrowNum: correctNumArray.count, heightLabelRate: 0.4)
         let yourAnswerLabelArray = makeLabel(arrowNum: yourNumArray.count, heightLabelRate: 0.6)
         
         // ラベルにテキスト代入
@@ -86,7 +86,7 @@ class ResultViewController: UIViewController {
         }
         
         for i in 0..<yourAnswerLabelArray.count {
-            makeLabelContent(label: yourAnswerLabelArray[i] as? UILabel , arrowId: correctNumArray[i], cellWidth: Double((yourAnswerLabelArray[i] as! UILabel).bounds.height))
+            makeLabelContent(label: yourAnswerLabelArray[i] as? UILabel , arrowId: yourNumArray[i], cellWidth: Double((yourAnswerLabelArray[i] as! UILabel).bounds.height))
         }
         
         // Backボタンを削除

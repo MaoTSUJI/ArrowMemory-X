@@ -63,6 +63,10 @@ class AnswerViewController: UIViewController {
         // セル（解答欄）の生成
         makeLabel(arrowNum: correctNumArray.count)
         
+        let label1 = labelArray[0] as! UILabel
+        label1.layer.borderColor = UIColor.darkGray.cgColor // 枠線の色
+
+        
         print("correctNumArray: \(correctNumArray)")
         // Backボタンを削除
         navigationController?.navigationBar.isHidden = true
@@ -113,9 +117,16 @@ class AnswerViewController: UIViewController {
         // 動作したらカウントアップ
         count += 1
         
+        if count < labelArray.count {
+            let label = labelArray[count] as! UILabel
+            label.layer.borderColor = UIColor.darkGray.cgColor // 枠線の色
+        }
+        
+        
     }
     
     @IBAction func didClickToResult(_ sender: UIButton) {
+                
         // 複数の配列を送るために、多重配列を用意
         var arrays:[[Int]] = [[],[]]
         arrays[0] = correctNumArray
@@ -165,7 +176,7 @@ class AnswerViewController: UIViewController {
             
             // ラベルデザイン
             label.layer.borderWidth = 1.0
-            label.layer.borderColor = UIColor.darkGray.cgColor // 枠線の色
+            label.layer.borderColor = UIColor.lightGray.cgColor // 枠線の色
             label.layer.cornerRadius = CGFloat(cellWidth * 0.2)  // 角丸のサイズ
             // 生成したラベルを配列に格納
             labelArray.append(label)
