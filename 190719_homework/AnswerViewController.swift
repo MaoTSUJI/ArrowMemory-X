@@ -13,9 +13,11 @@ class AnswerViewController: UIViewController {
     @IBOutlet weak var resultButton: UIButton!
     
     // 前のページから受け取る値
-    var value:[[Any]] = [[]]
+    var value:[[Any]] = []
+    
     // 正しい答えの配列番号
     var correctNumArray:[Int] = []
+    var arrowNum:Int = 3
     
     // あなたの回答の配列番号
     var yourNumArray:[Int] = [1,2,3]
@@ -23,26 +25,6 @@ class AnswerViewController: UIViewController {
     var count = 0
     
     var inputArrowNum :Int = 0
-    
-    // クラス記述で省略したい
-    ////////////////////////////////////////////////////////////////////////
-    // 矢印の表示位置を設定するパラメータ
-    // スクリーンの幅・高さを取得
-    let screenWidth = Int(UIScreen.main.bounds.size.width)
-    let screenHeight = Int(UIScreen.main.bounds.size.height)
-    
-    let constInterval = 0.2 // 矢印のセルとセルの感覚
-    let constEdge = 0.5 // セルの端とスクリーンの端との感覚
-    // 各定数に応じたセルサイズの算出
-    lazy var molecule = Double(screenWidth)
-    lazy var denominator = (1 + constInterval) * Double(arrowNum) + 2 * constEdge - constInterval
-    lazy var cellWidth = molecule / denominator     // セルのサイズ
-    // ラベルの初期位置、次のセルとの間隔を算出
-    lazy var x = constEdge * cellWidth
-    lazy var y = Double(screenHeight) * 0.2
-    lazy var d = cellWidth + constInterval * cellWidth
-    ////////////////////////////////////////////////////////////////////////
-    
     
     // 冗長やから省略したい
     ////////////////////////////////////////////////////////////////////////////////
@@ -59,19 +41,26 @@ class AnswerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //////////////////////////////////////////////////////////////////////////////
         resultButton.backgroundColor = .lightGray
         resultButton.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
         resultButton.layer.cornerRadius = 18
         resultButton.clipsToBounds = true
+        //////////////////////////////////////////////////////////////////////////////
         
         // 前画面で生成したランダムな数字の配列
         let value0 = value[0]
-        
-        // 受け取った値をIntに変更
+        print(value0)
+
+        // 受け取った値（正しい答え）をIntに変更し、配列に格納
         for num in value0 {
-            let numInt = Int(num as? String ?? "")!
-            correctNumArray.append(numInt)
+            correctNumArray.append(num as! Int)
         }
+        
+        // セル（解答欄）の生成
+        makeLabel(arrowNum: correctNumArray.count)
+        
+        
         
         print("correctNumArray: \(correctNumArray)")
         // Backボタンを削除
@@ -168,5 +157,45 @@ class AnswerViewController: UIViewController {
             nextVC.arrayValue = sender as! [[String]]
         }
     }
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////
+    // セルのラベル作成
+    func makeLabel(arrowNum: Int) {
+        
+        // クラス記述で省略したい
+        ////////////////////////////////////////////////////////////////////////
+        // 矢印の表示位置を設定するパラメータ
+        // スクリーンの幅・高さを取得
+        let screenWidth = Int(UIScreen.main.bounds.size.width)
+        let screenHeight = Int(UIScreen.main.bounds.size.height)
+        
+        let constInterval = 0.2 // 矢印のセルとセルの感覚
+        let constEdge = 0.5 // セルの端とスクリーンの端との感覚
+        // 各定数に応じたセルサイズの算出
+        let molecule = Double(screenWidth)
+        let denominator = (1 + constInterval) * Double(arrowNum) + 2 * constEdge - constInterval
+        let cellWidth = molecule / denominator     // セルのサイズ
+        // ラベルの初期位置、次のセルとの間隔を算出
+        let x = constEdge * cellWidth
+        let y = Double(screenHeight) * 0.2
+        let d = cellWidth + constInterval * cellWidth
+        ////////////////////////////////////////////////////////////////////////
+
+        // ラベルの生成
+        for i in 0..<arrowNum {
+            let label = UILabel(frame: CGRect(x: x + (d * Double(i)), y: y , width: cellWidth, height: cellWidth))
+            
+            // ラベルデザイン
+            label.layer.borderWidth = 1.0
+            label.layer.borderColor = UIColor.darkGray.cgColor // 枠線の色
+            label.layer.cornerRadius = CGFloat(cellWidth * 0.2)  // 角丸のサイズ
+            // 生成したラベルを配列に格納
+//            labelArray.append(label)
+            
+            view.addSubview(label)
+        }
+    }
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////
     
 }
