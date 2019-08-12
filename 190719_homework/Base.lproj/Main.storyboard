@@ -187,7 +187,7 @@
                                 <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="覚えた矢印の方向にスワイプしてください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXh-Ww-emA">
-                                <rect key="frame" x="29" y="223" width="330" height="41"/>
+                                <rect key="frame" x="29" y="269" width="330" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="c2s-sw-9SN"/>
                                 </constraints>
@@ -404,7 +404,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="e4X-9f-nNe"/>
         <segue reference="jN6-ag-cW3"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -63,8 +63,6 @@ class AnswerViewController: UIViewController {
         // セル（解答欄）の生成
         makeLabel(arrowNum: correctNumArray.count)
         
-        
-        
         print("correctNumArray: \(correctNumArray)")
         // Backボタンを削除
         navigationController?.navigationBar.isHidden = true
@@ -98,16 +96,8 @@ class AnswerViewController: UIViewController {
     // 入力した時の処理
     func didAction() {
         
-        print(value)
-        
-        let value0 = value[0]
-        let value1 = value[1]
-        
-        print("value0: \(value0)")
-        print("value1: \(value1)")
-
         // 入力値を配列に格納
-        yourNumArray.append(inputArrowNum)
+        yourNumArray[count] = inputArrowNum
         
         // セルの中に矢印を記入
         makeLabelContent(label: labelArray[count] as? UILabel, arrowId: inputArrowNum, cellWidth: Double((labelArray[count] as! UILabel).bounds.height))
@@ -122,37 +112,6 @@ class AnswerViewController: UIViewController {
         
         // 動作したらカウントアップ
         count += 1
-////         答えと一致した時テキストカラーを黒、一致しなかったとき赤
-//        if count == 1 {
-//            inputArrowNum = yourNumArray[0]
-//            if correctNumArray[0] == yourNumArray[0] {
-//                arrow1.textColor = .black
-//            } else {
-//                arrow1.textColor = .red
-//            }
-//
-//            arrow2.layer.borderColor = UIColor.darkGray.cgColor // 枠線の色
-//
-//        } else if count == 2 {
-//            inputArrowNum = yourNumArray[1]
-//            if correctNumArray[1] == yourNumArray[1] {
-//                arrow2.textColor = .black
-//            } else {
-//                arrow2.textColor = .red
-//            }
-//
-//            arrow3.layer.borderColor = UIColor.darkGray.cgColor // 枠線の色
-//
-//        } else if count == 3 {
-//            inputArrowNum = yourNumArray[2]
-//            if correctNumArray[2] == yourNumArray[2] {
-//                arrow3.textColor = .black
-//            } else {
-//                arrow3.textColor = .red
-//            }
-//        }
-        
-        
         
     }
     
@@ -161,10 +120,11 @@ class AnswerViewController: UIViewController {
         var arrays:[[Int]] = [[],[]]
         arrays[0] = correctNumArray
         arrays[1] = yourNumArray
-   
-//        print(arrays)
         
         let inputValue = arrays
+        
+        print("correctNumArray: \(correctNumArray)")
+        print("yourNumArray: \(yourNumArray)")
         performSegue(withIdentifier: "toResult", sender: inputValue)
         
     }
@@ -172,7 +132,7 @@ class AnswerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toResult" {
             let nextVC = segue.destination as! ResultViewController
-            nextVC.arrayValue = sender as! [[String]]
+            nextVC.arrayValue = sender as! [[Int]]
         }
     }
     

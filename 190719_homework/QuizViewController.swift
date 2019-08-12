@@ -14,8 +14,8 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var okButton: UIButton!
     
     var arrowNum = 3    // 前の画面から持ってきた値, レベルに応じた矢印の数3,5,7
-    var arrowRandomArray:[String] = []
-    var numRandomArray:[Int] = []
+    var arrowRandomArray:[String] = ["0","1","2"]
+    var numRandomArray:[Int] = [0,0,0]
     
     // 生成するラベルを入れる配列を用意
     var labelArray:[Any] = []
@@ -29,7 +29,7 @@ class QuizViewController: UIViewController {
     lazy var arrowArray = [arrowLeft, arrowRight, arrowUp, arrowDown]
     // 下2行デバッグ用
     let arrowArrayString = ["arrowLeft", "arrowRight", "arrowUp", "arrowDown"]
-    var arrowRandomArrayString:[String] = []
+    var arrowRandomArrayString:[String] = ["0","1","2"]
     
     
     override func viewDidLoad() {
@@ -41,17 +41,17 @@ class QuizViewController: UIViewController {
         okButton.clipsToBounds = true
         
         // 変数iを使わないのであれば、[_]で代用すれば良い
-        for _ in 0..<arrowNum {
+        for i in 0..<arrowNum {
             // 0から5までのランダムな変数を指定
             let randomNum = Int.random(in: 0 ..< arrowArray.count)
-            numRandomArray.append(randomNum)
-            arrowRandomArray.append(arrowArray[randomNum])
+            numRandomArray[i] = randomNum
+            arrowRandomArray[i] = arrowArray[randomNum]
             // 確認用
-            arrowRandomArrayString.append(arrowArrayString[randomNum])
+            arrowRandomArrayString[i] = arrowArrayString[randomNum]
         }
         
-        print("次に返す値：配列　\(numRandomArray)")
-        print("矢印の確認　\(arrowRandomArrayString)")
+        print("Quiz画面　次に返す値：配列　\(numRandomArray)")
+        print("Quiz画面　矢印の確認　\(arrowRandomArrayString)")
         
         // セル、中身の生成
         makeLabel(arrowNum: arrowNum)
