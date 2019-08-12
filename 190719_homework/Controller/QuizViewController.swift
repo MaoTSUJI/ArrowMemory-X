@@ -14,8 +14,8 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var okButton: UIButton!
     
     var arrowNum = 3    // 前の画面から持ってきた値, レベルに応じた矢印の数3,5,7
-    var arrowRandomArray:[String] = ["0","1","2"]
-    var numRandomArray:[Int] = [0,0,0]
+    var arrowRandomArray:[String] = []
+    var numRandomArray:[Int] = []
     
     // 生成するラベルを入れる配列を用意
     var labelArray:[Any] = []
@@ -40,14 +40,16 @@ class QuizViewController: UIViewController {
         okButton.layer.cornerRadius = 18
         okButton.clipsToBounds = true
         
-        // 変数iを使わないのであれば、[_]で代用すれば良い
-        for i in 0..<arrowNum {
+        // 配列の中身をリセット
+        numRandomArray.removeAll()
+        arrowRandomArray.removeAll()
+        arrowRandomArrayString.removeAll()
+        // ランダム配列の作成
+        for _ in 0..<arrowNum {
             // 0から5までのランダムな変数を指定
             let randomNum = Int.random(in: 0 ..< arrowArray.count)
-            numRandomArray[i] = randomNum
-            arrowRandomArray[i] = arrowArray[randomNum]
-            // 確認用
-            arrowRandomArrayString[i] = arrowArrayString[randomNum]
+            numRandomArray.append(randomNum)
+            arrowRandomArray.append(arrowArray[randomNum])
         }
         
         print("Quiz画面　次に返す値：配列　\(numRandomArray)")

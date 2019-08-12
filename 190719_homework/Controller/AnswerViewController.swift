@@ -20,7 +20,7 @@ class AnswerViewController: UIViewController {
     var arrowNum:Int = 3
     
     // あなたの回答の配列番号
-    var yourNumArray:[Int] = [1,2,3]
+    var yourNumArray:[Int] = []
     // スワイプまたはタップされた回数をカウントする変数
     var count = 0
     
@@ -53,7 +53,7 @@ class AnswerViewController: UIViewController {
         
         // 前画面で生成したランダムな数字の配列
         let value0 = value[0]
-        print(value0)
+        print("value0: \(value0)")
 
         // 受け取った値（正しい答え）をIntに変更し、配列に格納
         for num in value0 {
@@ -97,7 +97,7 @@ class AnswerViewController: UIViewController {
     func didAction() {
         
         // 入力値を配列に格納
-        yourNumArray[count] = inputArrowNum
+        yourNumArray.append(inputArrowNum)
         
         // セルの中に矢印を記入
         makeLabelContent(label: labelArray[count] as? UILabel, arrowId: inputArrowNum, cellWidth: Double((labelArray[count] as! UILabel).bounds.height))

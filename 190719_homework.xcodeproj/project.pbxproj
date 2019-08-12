@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -52,7 +52,6 @@
 				1C7189B3F396EA09B8BAE8D4 /* Pods-190719_homework.debug.xcconfig */,
 				C2530E8DB6B885649FFE29E1 /* Pods-190719_homework.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -85,17 +84,25 @@
 		6D43385F22E1415B00468898 /* 190719_homework */ = {
 			isa = PBXGroup;
 			children = (
+				6DB2253023013EA300275E56 /* Controller */,
 				6D43386022E1415B00468898 /* AppDelegate.swift */,
-				6D43386222E1415B00468898 /* ViewController.swift */,
 				6D43386422E1415B00468898 /* Main.storyboard */,
 				6D43386722E1415E00468898 /* Assets.xcassets */,
 				6D43386922E1415E00468898 /* LaunchScreen.storyboard */,
 				6D43386C22E1415E00468898 /* Info.plist */,
+			);
+			path = 190719_homework;
+			sourceTree = "<group>";
+		};
+		6DB2253023013EA300275E56 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6D43386222E1415B00468898 /* ViewController.swift */,
 				6D4338B422E2864200468898 /* QuizViewController.swift */,
 				6D83D41E22E28D2900AD6F1C /* AnswerViewController.swift */,
 				6D83D42022E290C400AD6F1C /* ResultViewController.swift */,
 			);
-			path = 190719_homework;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
