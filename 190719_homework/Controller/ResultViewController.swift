@@ -87,6 +87,15 @@ class ResultViewController: UIViewController {
         
         for i in 0..<yourAnswerLabelArray.count {
             makeLabelContent(label: yourAnswerLabelArray[i] as? UILabel , arrowId: yourNumArray[i], cellWidth: Double((yourAnswerLabelArray[i] as! UILabel).bounds.height))
+            
+            // 答えと一致値したとき、テキストカラーを黒
+            if correctNumArray[i] == yourNumArray[i] {
+                (yourAnswerLabelArray[i] as! UILabel).textColor = .black
+            }else {
+                (yourAnswerLabelArray[i] as! UILabel).textColor = .red
+                
+            }
+            
         }
         
         // Backボタンを削除

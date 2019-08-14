@@ -11,6 +11,7 @@ import UIKit
 class AnswerViewController: UIViewController {
     
     @IBOutlet weak var resultButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
     
     // 前のページから受け取る値
     var value:[[Any]] = []
@@ -44,7 +45,10 @@ class AnswerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //////////////////////////////////////////////////////////////////////////////
+        // スワイプする場所のデザイン
+        let swipeSpaceImage = UIImage(named: "swipeSpace")
+        imageView.image = swipeSpaceImage
+    //////////////////////////////////////////////////////////////////////////////
         resultButton.backgroundColor = .lightGray
         resultButton.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
         resultButton.layer.cornerRadius = 18
@@ -126,7 +130,12 @@ class AnswerViewController: UIViewController {
     }
     
     @IBAction func didClickToResult(_ sender: UIButton) {
-                
+        
+        // 配列が空かどうかチェック
+        if yourNumArray.count < arrowNum {
+            return
+        }
+        
         // 複数の配列を送るために、多重配列を用意
         var arrays:[[Int]] = [[],[]]
         arrays[0] = correctNumArray
