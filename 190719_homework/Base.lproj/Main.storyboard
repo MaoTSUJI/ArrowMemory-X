@@ -139,16 +139,20 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="覚えた矢印の方向にスワイプしてください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXh-Ww-emA">
-                                <rect key="frame" x="29" y="270" width="330" height="36"/>
+                                <rect key="frame" x="22" y="267" width="330" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RIi-aD-GML">
-                                <rect key="frame" x="87" y="338" width="200" height="200"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ここでスワイプ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IlN-vx-ej6">
+                                <rect key="frame" x="87" y="335" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -161,9 +165,8 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="ImageView" destination="RIi-aD-GML" id="4lZ-dt-e0t"/>
-                        <outlet property="imageView" destination="RIi-aD-GML" id="Sxk-gm-HpH"/>
                         <outlet property="resultButton" destination="uo0-gH-SUe" id="SE8-VP-MNB"/>
+                        <outlet property="swipeSpaceLabel" destination="IlN-vx-ej6" id="GDt-9Y-eVz"/>
                         <segue destination="gDV-gV-Bfh" kind="show" identifier="toResult" id="e4X-9f-nNe"/>
                     </connections>
                 </viewController>

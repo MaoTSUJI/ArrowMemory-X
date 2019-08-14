@@ -11,7 +11,7 @@ import UIKit
 class AnswerViewController: UIViewController {
     
     @IBOutlet weak var resultButton: UIButton!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var swipeSpaceLabel: UILabel!
     
     // 前のページから受け取る値
     var value:[[Any]] = []
@@ -46,8 +46,14 @@ class AnswerViewController: UIViewController {
         super.viewDidLoad()
         
         // スワイプする場所のデザイン
-        let swipeSpaceImage = UIImage(named: "swipeSpace")
-        imageView.image = swipeSpaceImage
+        let rgba = UIColor(red: 59/256, green: 174/256, blue: 170/256, alpha: 0.8)
+        
+        swipeSpaceLabel.textColor = .white
+        swipeSpaceLabel.backgroundColor = rgba
+        swipeSpaceLabel.textAlignment = NSTextAlignment.center
+        swipeSpaceLabel.layer.cornerRadius = 10
+        swipeSpaceLabel.clipsToBounds = true      // labelの時は必須（角丸）
+
     //////////////////////////////////////////////////////////////////////////////
         resultButton.backgroundColor = .lightGray
         resultButton.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
@@ -104,6 +110,11 @@ class AnswerViewController: UIViewController {
     // 入力した時の処理
     func didAction() {
         
+        // 指定の数以上入力したら、中断
+        if count >= arrowNum {
+            return
+        }
+        
         // 入力値を配列に格納
         yourNumArray.append(inputArrowNum)
         
@@ -127,12 +138,13 @@ class AnswerViewController: UIViewController {
         }
         
         
+        
     }
     
     @IBAction func didClickToResult(_ sender: UIButton) {
         
-        // 配列が空かどうかチェック
-        if yourNumArray.count < arrowNum {
+        // 3個入力していないと、処理を中断
+        if yourNumArray.count != arrowNum {
             return
         }
         
