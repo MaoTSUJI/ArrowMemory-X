@@ -8,5 +8,7 @@ target '190719_homework' do
   # Pods for 190719_homework
 
   pod 'FontAwesome.swift'
+  pod 'RevealingSplashView'
+
 
 end

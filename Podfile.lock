@@ -1,16 +1,20 @@
 PODS:
   - FontAwesome.swift (1.8.1)
+  - RevealingSplashView (0.6.0)
 
 DEPENDENCIES:
   - FontAwesome.swift
+  - RevealingSplashView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - FontAwesome.swift
+    - RevealingSplashView
 
 SPEC CHECKSUMS:
   FontAwesome.swift: 6f55c8ed22a30ab6a8ca94033473161f678dcd4b
+  RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
 
-PODFILE CHECKSUM: 842abf4c98b3f34b2e6bfe0fe64a4391bcbc6464
+PODFILE CHECKSUM: c9b8edce79a8e271421dbb30f62914cfd60ea2c2
 
 COCOAPODS: 1.7.5

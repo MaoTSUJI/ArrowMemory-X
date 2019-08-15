@@ -35,10 +35,7 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        okButton.backgroundColor = .lightGray
-        okButton.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
-        okButton.layer.cornerRadius = 18
-        okButton.clipsToBounds = true
+        makeButtonDesign(button: okButton)
         
         // 配列の中身をリセット
         numRandomArray.removeAll()
@@ -122,5 +119,12 @@ class QuizViewController: UIViewController {
         label.textAlignment = NSTextAlignment.center    // 中央寄せ
     }
 
+    // ボタンのデザインを作成
+    func makeButtonDesign(button: UIButton!) {
+        button.backgroundColor = .lightGray
+        button.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
+        button.layer.cornerRadius = 18
+        button.clipsToBounds = true
+    }
 
 }

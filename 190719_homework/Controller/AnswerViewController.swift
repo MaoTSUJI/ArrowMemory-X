@@ -55,10 +55,7 @@ class AnswerViewController: UIViewController {
         swipeSpaceLabel.clipsToBounds = true      // labelの時は必須（角丸）
 
     //////////////////////////////////////////////////////////////////////////////
-        resultButton.backgroundColor = .lightGray
-        resultButton.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
-        resultButton.layer.cornerRadius = 18
-        resultButton.clipsToBounds = true
+        makeButtonDesign(button: resultButton)
         //////////////////////////////////////////////////////////////////////////////
         
         // 前画面で生成したランダムな数字の配列
@@ -214,5 +211,13 @@ class AnswerViewController: UIViewController {
         label.textAlignment = NSTextAlignment.center    // 中央寄せ
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    // ボタンのデザインを作成
+    func makeButtonDesign(button: UIButton!) {
+        button.backgroundColor = .lightGray
+        button.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
+        button.layer.cornerRadius = 18
+        button.clipsToBounds = true
+    }
     
 }

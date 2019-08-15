@@ -7,10 +7,10 @@
 //
 
 import UIKit
+import RevealingSplashView
 
 class ViewController: UIViewController {
 
-    
     @IBOutlet weak var easyButton: UIButton!
     @IBOutlet weak var normalButton: UIButton!
     @IBOutlet weak var difficultButton: UIButton!
@@ -18,40 +18,28 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        easyButton.backgroundColor = .lightGray
-        easyButton.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
-        easyButton.layer.cornerRadius = 18
-        easyButton.clipsToBounds = true
-        
-        normalButton.backgroundColor = .lightGray
-        normalButton.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
-        normalButton.layer.cornerRadius = 18
-        normalButton.clipsToBounds = true
-        
-        difficultButton.backgroundColor = .lightGray
-        difficultButton.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
-        difficultButton.layer.cornerRadius = 18
-        difficultButton.clipsToBounds = true
+        // ここの省略法を知りたい
+        makeButtonDesign(button: easyButton)
+        makeButtonDesign(button: normalButton)
+        makeButtonDesign(button: difficultButton)
         
     }
 
     let levelArray = ["easy": 3,"normal": 5,"difficult": 7]
     
-    // ここもっと短くしたい！！
+    // レベルを選択し、次の画面へ遷移するボタン
     @IBAction func didClickEasy(_ sender: UIButton) {
-        let inputValue = levelArray["easy"]
-        performSegue(withIdentifier: "toQuiz", sender: inputValue)
+        goToQuiz(level: "easy")
     }
     
     @IBAction func didClickNormal(_ sender: UIButton) {
-        let inputValue = levelArray["normal"]
-        performSegue(withIdentifier: "toQuiz", sender: inputValue)
+        goToQuiz(level: "normal")
     }
     
     @IBAction func didClickDifficult(_ sender: UIButton) {
-        let inputValue = levelArray["difficult"]
-        performSegue(withIdentifier: "toQuiz", sender: inputValue)
+        goToQuiz(level: "difficult")
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toQuiz" {
@@ -60,6 +48,19 @@ class ViewController: UIViewController {
         }
     }
 
+    // ボタンのデザインを作成
+    func makeButtonDesign(button: UIButton!) {
+        button.backgroundColor = .lightGray
+        button.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
+        button.layer.cornerRadius = 18
+        button.clipsToBounds = true
+    }
+    
+    // 選択したレベル情報の値を渡す　//次の画面に遷移
+    func goToQuiz(level: String){
+        let inputValue = levelArray[level]
+        performSegue(withIdentifier: "toQuiz", sender: inputValue)
+    }
 
 }
 

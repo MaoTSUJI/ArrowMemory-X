@@ -12,18 +12,7 @@ class ResultViewController: UIViewController {
     
     @IBOutlet weak var replyButton: UIButton!
     @IBOutlet weak var homeButton: UIButton!
-    
     @IBOutlet weak var resultLabel: UILabel!
-    @IBOutlet weak var commentLabel: UILabel!
-    
-    @IBOutlet weak var correct1: UILabel!
-    @IBOutlet weak var correct2: UILabel!
-    @IBOutlet weak var correct3: UILabel!
-    
-    @IBOutlet weak var yourAnswer1: UILabel!
-    @IBOutlet weak var yourAnswer2: UILabel!
-    @IBOutlet weak var yourAnswer3: UILabel!
-    
     @IBOutlet weak var designLabel: UILabel!
     
     // 冗長やから省略したい
@@ -52,15 +41,8 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        replyButton.backgroundColor = .lightGray
-        replyButton.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
-        replyButton.layer.cornerRadius = 18
-        replyButton.clipsToBounds = true
-        
-        homeButton.backgroundColor = .lightGray
-        homeButton.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
-        homeButton.layer.cornerRadius = 18
-        homeButton.clipsToBounds = true
+        makeButtonDesign(button: replyButton)
+        makeButtonDesign(button: homeButton)
         
         correctNumArray = arrayValue[0] // 正解
         yourNumArray = arrayValue[1]    // あなたの答え
@@ -179,6 +161,14 @@ class ResultViewController: UIViewController {
         label.text = arrowArray[arrowId]  // FontAwesomeで出力
         label.textAlignment = NSTextAlignment.center    // 中央寄せ
         
+    }
+    
+    // ボタンのデザインを作成
+    func makeButtonDesign(button: UIButton!) {
+        button.backgroundColor = .lightGray
+        button.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
+        button.layer.cornerRadius = 18
+        button.clipsToBounds = true
     }
     
 }
