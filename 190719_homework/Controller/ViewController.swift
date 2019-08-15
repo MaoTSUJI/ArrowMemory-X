@@ -18,10 +18,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // ここの省略法を知りたい
+        // 各ボタンのデザインを設定
         makeButtonDesign(button: easyButton)
         makeButtonDesign(button: normalButton)
         makeButtonDesign(button: difficultButton)
+        
+        // スプラッシュアニメーション
+        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "splashImage")!,iconInitialSize: CGSize(width: 250, height: 250), backgroundColor: .white)
+        
+        revealingSplashView.animationType = SplashAnimationType.rotateOut
+        revealingSplashView.delay = 1.5
+        
+        //Adds the revealing splash view as a sub view
+        self.view.addSubview(revealingSplashView)
+        
+        //Starts animation
+        revealingSplashView.startAnimation(){
+            print("Completed")
+        }
         
     }
 
