@@ -226,13 +226,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="結果発表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xE6-OZ-jHC">
-                                <rect key="frame" x="126" y="69" width="122" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0問中0問正解！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSY-sA-eXo">
                                 <rect key="frame" x="98" y="145" width="178" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -277,6 +270,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ISI-c9-dz9">
+                                <rect key="frame" x="67" y="53" width="240" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="W3o-Ag-gQL"/>
@@ -285,6 +282,7 @@
                         <outlet property="designLabel" destination="CA4-qG-fwS" id="fbU-i3-vEu"/>
                         <outlet property="homeButton" destination="jhd-JU-8iG" id="td9-Fr-ZLl"/>
                         <outlet property="replyButton" destination="Xa9-yo-KKr" id="3nA-m6-epg"/>
+                        <outlet property="resultImageView" destination="ISI-c9-dz9" id="Zah-Tp-kmZ"/>
                         <outlet property="resultLabel" destination="iSY-sA-eXo" id="y1h-0b-hAE"/>
                         <segue destination="R5S-CV-5q1" kind="show" identifier="backToQuiz" id="jN6-ag-cW3"/>
                         <segue destination="Ll3-7q-Pwc" kind="show" identifier="backToHome" id="AKc-Lu-ELR"/>
@@ -314,6 +312,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mj4-dr-sYP"/>
+        <segue reference="jN6-ag-cW3"/>
     </inferredMetricsTieBreakers>
 </document>

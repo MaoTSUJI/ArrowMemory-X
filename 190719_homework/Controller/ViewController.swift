@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var normalLevelLabel: UILabel!
     @IBOutlet weak var difficultLevelLabel: UILabel!
     
-    let levelArray = ["easy": 3,"normal": 5,"difficult": 7]
+    let levelArray = ["easy": 3, "normal": 5, "difficult": 7]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +44,32 @@ class ViewController: UIViewController {
         }
         
         // レベルに合わせて星のアイコンを表示
-        let star = String.fontAwesomeIcon(name: .star)
+        let starSolid = String.fontAwesomeIcon(name: .star)
         let styleSolid = UIFont.fontAwesome(ofSize: CGFloat(10), style: .solid)
+        
+        
+        let starRegular = String.fontAwesomeIcon(name: .star)
         let styleRegular = UIFont.fontAwesome(ofSize: CGFloat(10), style: .regular)
 
+        var stars = ""
+        let num = levelArray["easy"]!
+        
+        for i in 0 ..< 7 {
+            if i < num {
+                stars += starSolid
+            } else {
+                stars += starRegular
+            }
+        }
+        
         easyLevelLabel.font = styleSolid
-        easyLevelLabel.text = star
+        easyLevelLabel.text = stars
+        
+        normalLevelLabel.font = styleSolid
+        normalLevelLabel.text = stars
+        
+        difficultLevelLabel.font = styleSolid
+        difficultLevelLabel.text = stars
         
         
     }

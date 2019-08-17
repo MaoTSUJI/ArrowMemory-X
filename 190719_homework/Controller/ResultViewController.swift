@@ -10,9 +10,11 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
+    @IBOutlet weak var resultImageView: UIImageView!
+    
+    @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var replyButton: UIButton!
     @IBOutlet weak var homeButton: UIButton!
-    @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var designLabel: UILabel!
     
     // 前のページから受け取る変数を用意
@@ -28,6 +30,10 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 結果発表
+        let resultImage = UIImage(named: "result")
+        resultImageView.image = resultImage
 
         makeButtonDesign(button: replyButton)
         makeButtonDesign(button: homeButton)
