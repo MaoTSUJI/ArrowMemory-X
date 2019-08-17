@@ -30,26 +30,15 @@ class ViewController: UIViewController {
         makeButtonDesign(button: difficultButton)
         
         // スプラッシュアニメーション
-        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "splashImage")!,iconInitialSize: CGSize(width: 250, height: 250), backgroundColor: .white)
-        
-        revealingSplashView.animationType = SplashAnimationType.squeezeAndZoomOut
-        revealingSplashView.delay = 1.0
-        
-        //Adds the revealing splash view as a sub view
-        self.view.addSubview(revealingSplashView)
-        
-        //Starts animation
-        revealingSplashView.startAnimation(){
-            print("Completed")
-        }
+        setSplashAnimation()
         
         // レベルに合わせて星のアイコンを表示
         let starSolid = String.fontAwesomeIcon(name: .star)
-        let styleSolid = UIFont.fontAwesome(ofSize: CGFloat(10), style: .solid)
+        let styleSolid = UIFont.fontAwesome(ofSize: CGFloat(20), style: .solid)
         
         
         let starRegular = String.fontAwesomeIcon(name: .star)
-        let styleRegular = UIFont.fontAwesome(ofSize: CGFloat(10), style: .regular)
+        let styleRegular = UIFont.fontAwesome(ofSize: CGFloat(20), style: .regular)
 
         var stars = ""
         let num = levelArray["easy"]!
@@ -101,5 +90,23 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "toQuiz", sender: inputValue)
     }
 
+    // スプラッシュアニメーション
+    func setSplashAnimation() {
+
+        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "splashImage")!,iconInitialSize: CGSize(width: 250, height: 250), backgroundColor: .white)
+        
+        revealingSplashView.animationType = SplashAnimationType.squeezeAndZoomOut
+        revealingSplashView.delay = 1.0
+        
+        //Adds the revealing splash view as a sub view
+        self.view.addSubview(revealingSplashView)
+        
+        //Starts animation
+        revealingSplashView.startAnimation(){
+            print("Completed")
+        }
+    }
+    
+    
 }
 
