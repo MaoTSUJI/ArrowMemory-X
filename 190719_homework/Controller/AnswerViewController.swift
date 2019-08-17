@@ -19,6 +19,7 @@ class AnswerViewController: UIViewController {
     // 正しい答えの配列番号
     var correctNumArray:[Int] = []
     var arrowNum:Int = 3
+
     
     // あなたの回答の配列番号
     var yourNumArray:[Int] = []
@@ -55,6 +56,8 @@ class AnswerViewController: UIViewController {
         for num in value0 {
             correctNumArray.append(num as! Int)
         }
+        
+        arrowNum = correctNumArray.count
         
         // セル（解答欄）の生成
         labelArray = makeLabel(arrowNum: arrowNum, heightLabelRate: 0.2)

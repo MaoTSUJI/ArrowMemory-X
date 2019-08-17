@@ -15,6 +15,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var normalButton: UIButton!
     @IBOutlet weak var difficultButton: UIButton!
     
+    @IBOutlet weak var easyLevelLabel: UILabel!
+    @IBOutlet weak var normalLevelLabel: UILabel!
+    @IBOutlet weak var difficultLevelLabel: UILabel!
+    
+    let levelArray = ["easy": 3,"normal": 5,"difficult": 7]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,9 +43,16 @@ class ViewController: UIViewController {
             print("Completed")
         }
         
-    }
+        // レベルに合わせて星のアイコンを表示
+        let star = String.fontAwesomeIcon(name: .star)
+        let styleSolid = UIFont.fontAwesome(ofSize: CGFloat(10), style: .solid)
+        let styleRegular = UIFont.fontAwesome(ofSize: CGFloat(10), style: .regular)
 
-    let levelArray = ["easy": 3,"normal": 5,"difficult": 7]
+        easyLevelLabel.font = styleSolid
+        easyLevelLabel.text = star
+        
+        
+    }
     
     // レベルを選択し、次の画面へ遷移するボタン
     @IBAction func didClickEasy(_ sender: UIButton) {

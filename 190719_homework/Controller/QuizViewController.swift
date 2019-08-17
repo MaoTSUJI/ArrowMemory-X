@@ -45,7 +45,7 @@ class QuizViewController: UIViewController {
         print("Quiz画面　矢印の確認　\(arrowRandomArrayString)")
         
         // セル、中身の生成
-        makeLabel(arrowNum: arrowNum, heightLabelRate: 0.2)
+        labelArray = makeLabel(arrowNum: arrowNum, heightLabelRate: 0.2)
         
         for i in 0..<labelArray.count {
             makeLabelContent(label: labelArray[i] as? UILabel, cellWidth: Double((labelArray[i] as! UILabel).bounds.height), arrowId: i, arrowArray: arrowRandomArray)

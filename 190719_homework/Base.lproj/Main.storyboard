@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdd-NI-eCU">
-                                <rect key="frame" x="128" y="500" width="120" height="36"/>
+                                <rect key="frame" x="66" y="474" width="120" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="ふつう"/>
                                 <connections>
@@ -41,7 +41,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibb-ja-cPB">
-                                <rect key="frame" x="128" y="559" width="120" height="36"/>
+                                <rect key="frame" x="66" y="527" width="120" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="むずかしい"/>
                                 <connections>
@@ -56,15 +56,36 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qA8-iq-60Y">
-                                <rect key="frame" x="128" y="440" width="120" height="36"/>
+                                <rect key="frame" x="66" y="420" width="120" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="やさしい"/>
+                                <state key="normal" title="かんたん"/>
                                 <connections>
                                     <action selector="didClickEasy:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1XR-fq-knK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[ ↑→←↓ ]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuJ-0P-Ajy">
                                 <rect key="frame" x="139" y="194" width="97" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="星星星星星星星星" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9v-VB-JFX">
+                                <rect key="frame" x="194" y="420" width="139" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="星星星星星星星星" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqG-Jl-8j9">
+                                <rect key="frame" x="194" y="474" width="139" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="星星星星星星星星" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6L-Ub-ZsT">
+                                <rect key="frame" x="194" y="527" width="139" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -77,8 +98,11 @@
                     <navigationItem key="navigationItem" id="PYx-gp-QfG"/>
                     <connections>
                         <outlet property="difficultButton" destination="ibb-ja-cPB" id="AwA-Vy-6d3"/>
+                        <outlet property="difficultLevelLabel" destination="W6L-Ub-ZsT" id="USz-i9-Scw"/>
                         <outlet property="easyButton" destination="qA8-iq-60Y" id="qAe-sK-8s0"/>
+                        <outlet property="easyLevelLabel" destination="i9v-VB-JFX" id="0Rj-7T-nNQ"/>
                         <outlet property="normalButton" destination="gdd-NI-eCU" id="hxF-Uj-wn0"/>
+                        <outlet property="normalLevelLabel" destination="cqG-Jl-8j9" id="XEs-pJ-anm"/>
                         <segue destination="R5S-CV-5q1" kind="show" identifier="toQuiz" id="mj4-dr-sYP"/>
                     </connections>
                 </viewController>
@@ -290,6 +314,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jN6-ag-cW3"/>
+        <segue reference="mj4-dr-sYP"/>
     </inferredMetricsTieBreakers>
 </document>
