@@ -30,17 +30,6 @@ class AnswerViewController: UIViewController {
     // 生成するラベルを入れる配列を用意
     var labelArray:[Any] = []
     
-    // 冗長やから省略したい
-    ////////////////////////////////////////////////////////////////////////////////
-    // FontAwesomeで矢印配列の用意
-    let arrowLeft = String.fontAwesomeIcon(name: .arrowLeft)
-    let arrowRight = String.fontAwesomeIcon(name: .arrowRight)
-    let arrowUp = String.fontAwesomeIcon(name: .arrowUp)
-    let arrowDown = String.fontAwesomeIcon(name: .arrowDown)
-//    let dotCircle = String.fontAwesomeIcon(name: .dotCircle)
-    lazy var arrowArray = [arrowLeft, arrowRight, arrowUp, arrowDown]
-    let arrowArrayString = ["arrowLeft", "arrowRight", "arrowUp", "arrowDown"]
-    ////////////////////////////////////////////////////////////////////////////////
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +57,7 @@ class AnswerViewController: UIViewController {
         }
         
         // セル（解答欄）の生成
-        makeLabel(arrowNum: correctNumArray.count)
+        labelArray = makeLabel(arrowNum: arrowNum, heightLabelRate: 0.2)
         
         let label1 = labelArray[0] as! UILabel
         label1.layer.borderColor = UIColor.darkGray.cgColor // 枠線の色
@@ -115,8 +104,11 @@ class AnswerViewController: UIViewController {
         // 入力値を配列に格納
         yourNumArray.append(inputArrowNum)
         
+        print("count: \(count)")
+        print("labelArray: \(labelArray)")
+        
         // セルの中に矢印を記入
-        makeLabelContent(label: labelArray[count] as? UILabel, arrowId: inputArrowNum, cellWidth: Double((labelArray[count] as! UILabel).bounds.height))
+        makeLabelContent(label: labelArray[count] as? UILabel, cellWidth: Double((labelArray[count] as! UILabel).bounds.height), arrowId: inputArrowNum, arrowArray: Arrow.arrowArray)
         
         // 答えと一致値したとき、テキストカラーを黒
         if correctNumArray[count] == inputArrowNum {
@@ -165,59 +157,5 @@ class AnswerViewController: UIViewController {
         }
     }
     
-////////////////////////////////////////////////////////////////////////////////////////////////////
-    // セルのラベル作成
-    func makeLabel(arrowNum: Int) {
-        
-        // クラス記述で省略したい
-        ////////////////////////////////////////////////////////////////////////
-        // 矢印の表示位置を設定するパラメータ
-        // スクリーンの幅・高さを取得
-        let screenWidth = Int(UIScreen.main.bounds.size.width)
-        let screenHeight = Int(UIScreen.main.bounds.size.height)
-        
-        let constInterval = 0.2 // 矢印のセルとセルの感覚
-        let constEdge = 0.5 // セルの端とスクリーンの端との感覚
-        // 各定数に応じたセルサイズの算出
-        let molecule = Double(screenWidth)
-        let denominator = (1 + constInterval) * Double(arrowNum) + 2 * constEdge - constInterval
-        let cellWidth = molecule / denominator     // セルのサイズ
-        // ラベルの初期位置、次のセルとの間隔を算出
-        let x = constEdge * cellWidth
-        let y = Double(screenHeight) * 0.2
-        let d = cellWidth + constInterval * cellWidth
-        ////////////////////////////////////////////////////////////////////////
-
-        // ラベルの生成
-        for i in 0..<arrowNum {
-            let label = UILabel(frame: CGRect(x: x + (d * Double(i)), y: y , width: cellWidth, height: cellWidth))
-            
-            // ラベルデザイン
-            label.layer.borderWidth = 1.0
-            label.layer.borderColor = UIColor.lightGray.cgColor // 枠線の色
-            label.layer.cornerRadius = CGFloat(cellWidth * 0.2)  // 角丸のサイズ
-            // 生成したラベルを配列に格納
-            labelArray.append(label)
-            
-            view.addSubview(label)
-        }
-    }
-    
-    
-    // ラベルの中身生成
-    func makeLabelContent(label: UILabel!, arrowId: Int, cellWidth: Double) {
-        label.font = UIFont.fontAwesome(ofSize: CGFloat(cellWidth), style: .solid)
-        label.text = arrowArray[arrowId]  // FontAwesomeで出力
-        label.textAlignment = NSTextAlignment.center    // 中央寄せ
-    }
-////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    // ボタンのデザインを作成
-    func makeButtonDesign(button: UIButton!) {
-        button.backgroundColor = .lightGray
-        button.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
-        button.layer.cornerRadius = 18
-        button.clipsToBounds = true
-    }
     
 }

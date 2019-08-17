@@ -26,8 +26,8 @@ class ViewController: UIViewController {
         // スプラッシュアニメーション
         let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "splashImage")!,iconInitialSize: CGSize(width: 250, height: 250), backgroundColor: .white)
         
-        revealingSplashView.animationType = SplashAnimationType.rotateOut
-        revealingSplashView.delay = 1.5
+        revealingSplashView.animationType = SplashAnimationType.squeezeAndZoomOut
+        revealingSplashView.delay = 1.0
         
         //Adds the revealing splash view as a sub view
         self.view.addSubview(revealingSplashView)
@@ -62,14 +62,6 @@ class ViewController: UIViewController {
         }
     }
 
-    // ボタンのデザインを作成
-    func makeButtonDesign(button: UIButton!) {
-        button.backgroundColor = .lightGray
-        button.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
-        button.layer.cornerRadius = 18
-        button.clipsToBounds = true
-    }
-    
     // 選択したレベル情報の値を渡す　//次の画面に遷移
     func goToQuiz(level: String){
         let inputValue = levelArray[level]
