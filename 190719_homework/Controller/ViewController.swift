@@ -29,15 +29,13 @@ class ViewController: UIViewController {
         makeButtonDesign(button: normalButton)
         makeButtonDesign(button: difficultButton)
         
+        // アプリ起動時のみ、スプラッシュメソッドを実行
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(
             self,
             selector: Selector(("setSplashAnimation")),
             name:UIApplication.didFinishLaunchingNotification,
             object: nil)
-        
-        // スプラッシュアニメーション
-//        setSplashAnimation()
         
         // レベルに合わせて星のアイコンを表示
         let starSolid = String.fontAwesomeIcon(name: .star)
