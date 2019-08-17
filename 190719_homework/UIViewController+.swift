@@ -12,7 +12,34 @@ extension UIViewController {
     
     // ボタンのデザインを作成
     func makeButtonDesign(button: UIButton!) {
-        button.backgroundColor = .lightGray
+        
+        
+        /////////////////青色
+        //グラデーションの開始色
+        let topColor = UIColor(red:118/255, green:184/255, blue:248/255, alpha:1)
+        //グラデーションの終了色
+        let bottomColor = UIColor(red:66/255, green:103/255, blue:178/255, alpha:1)
+        /////////////////青色
+        
+        //グラデーションの色を配列で管理
+        let gradientColors: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
+        
+        //グラデーションレイヤーを作成
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        
+        //グラデーションの色をレイヤーに割り当てる
+        gradientLayer.colors = gradientColors
+        //グラデーションレイヤーをスクリーンサイズにする
+        gradientLayer.frame = button.bounds
+        
+        // 角度を変更する
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        
+        //グラデーションレイヤーをビューの一番下に配置
+        button.layer.insertSublayer(gradientLayer, at: 0)
+        
+//        button.backgroundColor = .black
         button.setTitleColor(UIColor.white, for: UIControl.State.normal)  // 4
         button.layer.cornerRadius = 18
         button.clipsToBounds = true
