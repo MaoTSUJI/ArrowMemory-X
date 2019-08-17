@@ -11,6 +11,8 @@ import RevealingSplashView
 
 extension UIViewController {
     
+    
+    
     // スプラッシュアニメーション
     func setSplashAnimation() {
         
