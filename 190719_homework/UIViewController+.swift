@@ -7,8 +7,26 @@
 //
 
 import UIKit
+import RevealingSplashView
 
 extension UIViewController {
+    
+    // スプラッシュアニメーション
+    func setSplashAnimation() {
+        
+        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "splashImage")!,iconInitialSize: CGSize(width: 250, height: 250), backgroundColor: .white)
+        
+        revealingSplashView.animationType = SplashAnimationType.squeezeAndZoomOut
+        revealingSplashView.delay = 1.0
+        
+        //Adds the revealing splash view as a sub view
+        self.view.addSubview(revealingSplashView)
+        
+        //Starts animation
+        revealingSplashView.startAnimation(){
+            print("Completed")
+        }
+    }
     
     // ボタンのデザインを作成
     func makeButtonDesign(button: UIButton!) {

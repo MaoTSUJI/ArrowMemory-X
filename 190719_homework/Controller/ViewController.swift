@@ -29,8 +29,15 @@ class ViewController: UIViewController {
         makeButtonDesign(button: normalButton)
         makeButtonDesign(button: difficultButton)
         
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(
+            self,
+            selector: Selector(("setSplashAnimation")),
+            name:UIApplication.didFinishLaunchingNotification,
+            object: nil)
+        
         // スプラッシュアニメーション
-        setSplashAnimation()
+//        setSplashAnimation()
         
         // レベルに合わせて星のアイコンを表示
         let starSolid = String.fontAwesomeIcon(name: .star)
@@ -88,23 +95,6 @@ class ViewController: UIViewController {
     func goToQuiz(level: String){
         let inputValue = levelArray[level]
         performSegue(withIdentifier: "toQuiz", sender: inputValue)
-    }
-
-    // スプラッシュアニメーション
-    func setSplashAnimation() {
-
-        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "splashImage")!,iconInitialSize: CGSize(width: 250, height: 250), backgroundColor: .white)
-        
-        revealingSplashView.animationType = SplashAnimationType.squeezeAndZoomOut
-        revealingSplashView.delay = 1.0
-        
-        //Adds the revealing splash view as a sub view
-        self.view.addSubview(revealingSplashView)
-        
-        //Starts animation
-        revealingSplashView.startAnimation(){
-            print("Completed")
-        }
     }
     
     
