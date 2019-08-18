@@ -16,4 +16,8 @@ class Color {
     
     let pastelYellow = UIColor(red:249/255, green:224/255, blue:124/255, alpha:1)
     
+    let pastelDarkBlue = UIColor(red:72/255, green:126/255, blue:162/255, alpha:1)
+    
+    
 }
+

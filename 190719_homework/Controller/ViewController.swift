@@ -35,7 +35,8 @@ class ViewController: UIViewController {
             self,
             selector: Selector(("setSplashAnimation")),
             name:UIApplication.didFinishLaunchingNotification,
-            object: nil)
+            object: nil
+        )
         
         // レベルに合わせて星のアイコンを表示
         let starSolid = String.fontAwesomeIcon(name: .star)

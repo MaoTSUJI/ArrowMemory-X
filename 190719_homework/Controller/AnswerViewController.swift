@@ -62,8 +62,17 @@ class AnswerViewController: UIViewController {
         // セル（解答欄）の生成
         labelArray = makeLabel(arrowNum: arrowNum, heightLabelRate: 0.2)
         
-        let label1 = labelArray[0] as! UILabel
-        label1.layer.borderColor = UIColor.darkGray.cgColor // 枠線の色
+        for i in 0 ..< arrowNum {
+        
+            let label = labelArray[i] as! UILabel
+            
+            if i == 0 {
+                label.layer.borderColor = UIColor.darkGray.cgColor // 枠線の色
+            } else {
+                label.layer.borderColor = UIColor.lightGray.cgColor // 枠線の色
+            }
+            
+        }
 
         
         print("correctNumArray: \(correctNumArray)")
