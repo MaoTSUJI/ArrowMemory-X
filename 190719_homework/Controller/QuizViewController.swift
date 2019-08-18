@@ -11,6 +11,8 @@ import FontAwesome_swift
 
 class QuizViewController: UIViewController {
     
+    @IBOutlet weak var quizImageView: UIImageView!
+    
     @IBOutlet weak var okButton: UIButton!
     
     var arrowNum = 3    // 前の画面から持ってきた値, レベルに応じた矢印の数3,5,7
@@ -26,6 +28,10 @@ class QuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // ラベル
+        let quizImage = UIImage(named: "quizLabel")
+        quizImageView.image = quizImage
 
         makeButtonDesign(button: okButton)
         
@@ -45,7 +51,7 @@ class QuizViewController: UIViewController {
         print("Quiz画面　矢印の確認　\(arrowRandomArrayString)")
         
         // セル、中身の生成
-        labelArray = makeLabel(arrowNum: arrowNum, heightLabelRate: 0.2)
+        labelArray = makeLabel(arrowNum: arrowNum, heightLabelRate: 0.25)
         
         for i in 0..<labelArray.count {
             makeLabelContent(label: labelArray[i] as? UILabel, cellWidth: Double((labelArray[i] as! UILabel).bounds.height), arrowId: i, arrowArray: arrowRandomArray)

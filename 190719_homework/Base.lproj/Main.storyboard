@@ -147,6 +147,7 @@
                     </view>
                     <connections>
                         <outlet property="okButton" destination="7Zg-hv-ZAq" id="GcA-4z-xy8"/>
+                        <outlet property="quizImageView" destination="E91-gv-Y3R" id="VwW-69-w0W"/>
                         <segue destination="0L3-dm-tWV" kind="show" identifier="toAnswer" id="IXm-WP-LGt"/>
                     </connections>
                 </viewController>
@@ -202,6 +203,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="answerImageView" destination="kw7-sV-znv" id="QOb-Cx-NkQ"/>
                         <outlet property="resultButton" destination="uo0-gH-SUe" id="SE8-VP-MNB"/>
                         <outlet property="swipeSpaceLabel" destination="IlN-vx-ej6" id="GDt-9Y-eVz"/>
                         <segue destination="gDV-gV-Bfh" kind="show" identifier="toResult" id="e4X-9f-nNe"/>

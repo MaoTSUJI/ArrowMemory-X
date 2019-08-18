@@ -32,7 +32,7 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         
         // 結果発表
-        let resultImage = UIImage(named: "result")
+        let resultImage = UIImage(named: "resultLabel")
         resultImageView.image = resultImage
 
         makeButtonDesign(button: replyButton)

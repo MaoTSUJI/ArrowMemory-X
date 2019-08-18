@@ -10,6 +10,7 @@ import UIKit
 
 class AnswerViewController: UIViewController {
     
+    @IBOutlet weak var answerImageView: UIImageView!
     @IBOutlet weak var resultButton: UIButton!
     @IBOutlet weak var swipeSpaceLabel: UILabel!
     
@@ -35,11 +36,15 @@ class AnswerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // ラベル
+        let answerImage = UIImage(named: "answerLabel")
+        answerImageView.image = answerImage
+        
         // スワイプする場所のデザイン
         let rgba = UIColor(red: 59/256, green: 174/256, blue: 170/256, alpha: 0.8)
         
-        swipeSpaceLabel.textColor = .white
-        swipeSpaceLabel.backgroundColor = rgba
+        swipeSpaceLabel.textColor = UIColor.black
+        swipeSpaceLabel.backgroundColor = Color().pastelYellow
         swipeSpaceLabel.textAlignment = NSTextAlignment.center
         swipeSpaceLabel.layer.cornerRadius = 10
         swipeSpaceLabel.clipsToBounds = true      // labelの時は必須（角丸）
@@ -60,7 +65,7 @@ class AnswerViewController: UIViewController {
         arrowNum = correctNumArray.count
         
         // セル（解答欄）の生成
-        labelArray = makeLabel(arrowNum: arrowNum, heightLabelRate: 0.2)
+        labelArray = makeLabel(arrowNum: arrowNum, heightLabelRate: 0.25)
         
         for i in 0 ..< arrowNum {
         

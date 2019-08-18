@@ -88,6 +88,7 @@ extension UIViewController {
             
             // ラベルデザイン
             label.layer.borderWidth = 1.0
+            
             label.layer.borderColor = UIColor.darkGray.cgColor // 枠線の色
             label.layer.cornerRadius = CGFloat(cellWidth * 0.2)  // 角丸のサイズ
             // 生成したラベルを配列に格納
