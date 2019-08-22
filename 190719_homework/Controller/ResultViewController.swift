@@ -13,6 +13,11 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var resultImageView: UIImageView!
     
     @IBOutlet weak var resultLabel: UILabel!
+    
+    @IBOutlet weak var brainImageView: UIImageView!
+    @IBOutlet weak var correctNumImageView: UIImageView!
+    @IBOutlet weak var NumImageView: UIImageView!
+    
     @IBOutlet weak var replyButton: UIButton!
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var designLabel: UILabel!
@@ -41,11 +46,14 @@ class ResultViewController: UIViewController {
 //        tweetButton.textColor = Color().pastelYellow
 //        tweetButton.text = starSolid
         
-        
         // 結果発表
         let resultImage = UIImage(named: "resultLabel")
         resultImageView.image = resultImage
-
+                    
+        let brainImage = UIImage(named: "brain")
+        brainImageView.image = brainImage
+        
+        
         makeButtonDesign(button: replyButton)
         makeButtonDesign(button: homeButton)
         
@@ -88,6 +96,14 @@ class ResultViewController: UIViewController {
             
         }
         
+        
+        // 正答率を画像で表示
+        let correctNumImage = UIImage(named: showResultNumber(num: correctCount))
+        correctNumImageView.image = correctNumImage
+        
+        let NumImage = UIImage(named: showResultNumber(num: yourNumArray.count))
+        NumImageView.image = NumImage
+        
     }
     
     @IBAction func didClickTweet(_ sender: UIButton) {
@@ -115,6 +131,40 @@ class ResultViewController: UIViewController {
             let nextVC = segue.destination as! QuizViewController
             nextVC.arrowNum = sender as! Int
         }
+    }
+    
+    
+    func showResultNumber(num: Int) -> String {
+        
+        let imageName: String
+        
+        switch num {
+        case 1:
+            imageName = "num_1"
+        case 2:
+            imageName = "num_2"
+        case 3:
+            imageName = "num_3"
+        case 4:
+            imageName = "num_4"
+        case 5:
+            imageName = "num_5"
+        case 6:
+            imageName = "num_6"
+        case 7:
+            imageName = "num_7"
+        case 8:
+            imageName = "num_8"
+        case 9:
+            imageName = "num_9"
+        case 10:
+            imageName = "num_10"
+        default:
+            imageName = "num_0"
+        }
+        
+        return imageName
+
     }
     
     
