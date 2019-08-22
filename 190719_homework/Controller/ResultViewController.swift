@@ -17,12 +17,14 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var designLabel: UILabel!
     
+    @IBOutlet weak var tweetButton: UIButton!
+    
     // 前のページから受け取る変数を用意
     var arrayValue:[[Int]] = [[],[]]
     var correctNumArray:[Int] = []
     var yourNumArray:[Int] = []
     
-    // 正解率をカウント
+    // 正解数をカウント
     var correctCount = 0
     
     var correctAnswerLabelArray:[Any] = []
@@ -30,6 +32,15 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+//        let starSolid = String.fontAwesomeIcon(name: .star)
+//        let styleSolid = UIFont.fontAwesome(ofSize: CGFloat(20), style: .solid)
+//
+//        tweetButton.font = styleSolid
+//        tweetButton.textColor = Color().pastelYellow
+//        tweetButton.text = starSolid
+        
         
         // 結果発表
         let resultImage = UIImage(named: "resultLabel")
@@ -53,8 +64,8 @@ class ResultViewController: UIViewController {
 //        commentLabel.text = sayComment(count: correctCount)
 
         // ラベルのセルを作成
-        correctAnswerLabelArray = makeLabel(arrowNum: correctNumArray.count, heightLabelRate: 0.4)
-        yourAnswerLabelArray = makeLabel(arrowNum: yourNumArray.count, heightLabelRate: 0.6)
+        correctAnswerLabelArray = makeLabel(arrowNum: correctNumArray.count, heightLabelRate: 0.5)
+        yourAnswerLabelArray = makeLabel(arrowNum: yourNumArray.count, heightLabelRate: 0.65)
         
         // ラベルにテキスト代入
         for i in 0..<correctAnswerLabelArray.count {
@@ -77,8 +88,16 @@ class ResultViewController: UIViewController {
             
         }
         
-        // Backボタンを削除
-        navigationController?.navigationBar.isHidden = true
+    }
+    
+    @IBAction func didClickTweet(_ sender: UIButton) {
+        
+        let data = ["\(yourNumArray.count)問中\(correctCount)問正解！"] as [Any]
+        
+        let controller = UIActivityViewController(activityItems: data, applicationActivities: nil)
+        
+        present(controller, animated: true, completion: nil)
+
     }
     
     

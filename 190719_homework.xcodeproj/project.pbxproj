@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		242B12CA6B7C1D5E410AD29F /* Pods_190719_homework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 392A8EC78B9957C8637578EF /* Pods_190719_homework.framework */; };
+		6D3BEC83230A4FA800A73B86 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3BEC82230A4FA800A73B86 /* StartViewController.swift */; };
 		6D43386122E1415B00468898 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D43386022E1415B00468898 /* AppDelegate.swift */; };
 		6D43386322E1415B00468898 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D43386222E1415B00468898 /* ViewController.swift */; };
 		6D43386622E1415B00468898 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D43386422E1415B00468898 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		1C7189B3F396EA09B8BAE8D4 /* Pods-190719_homework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-190719_homework.debug.xcconfig"; path = "Target Support Files/Pods-190719_homework/Pods-190719_homework.debug.xcconfig"; sourceTree = "<group>"; };
 		392A8EC78B9957C8637578EF /* Pods_190719_homework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_190719_homework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D3BEC82230A4FA800A73B86 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		6D43385D22E1415B00468898 /* 190719_homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 190719_homework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D43386022E1415B00468898 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D43386222E1415B00468898 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		6DB2253023013EA300275E56 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6D3BEC82230A4FA800A73B86 /* StartViewController.swift */,
 				6D43386222E1415B00468898 /* ViewController.swift */,
 				6D4338B422E2864200468898 /* QuizViewController.swift */,
 				6D83D41E22E28D2900AD6F1C /* AnswerViewController.swift */,
@@ -245,6 +248,7 @@
 				6D83D42122E290C400AD6F1C /* ResultViewController.swift in Sources */,
 				6DF2BDD423065E0E002AFDAD /* ButtonUtils.swift in Sources */,
 				6D83D41F22E28D2900AD6F1C /* AnswerViewController.swift in Sources */,
+				6D3BEC83230A4FA800A73B86 /* StartViewController.swift in Sources */,
 				6D4338B522E2864200468898 /* QuizViewController.swift in Sources */,
 				6D43386322E1415B00468898 /* ViewController.swift in Sources */,
 				6D43386122E1415B00468898 /* AppDelegate.swift in Sources */,

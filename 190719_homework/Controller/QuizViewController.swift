@@ -32,7 +32,7 @@ class QuizViewController: UIViewController {
         // ラベル
         let quizImage = UIImage(named: "quizLabel")
         quizImageView.image = quizImage
-
+        
         makeButtonDesign(button: okButton)
         
         // 配列の中身をリセット
@@ -58,6 +58,14 @@ class QuizViewController: UIViewController {
         }
         
     }
+    
+    
+    
+    @IBAction func didClickBackButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToBack", sender: nil)
+        
+    }
+    
     
     // ランダムな番号の配列で返す
     @IBAction func didClickRemember(_ sender: UIButton) {

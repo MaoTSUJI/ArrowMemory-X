@@ -24,8 +24,10 @@ extension UIViewController {
         
         //Starts animation
         revealingSplashView.startAnimation(){
-            print("Completed")
+            print("start")
+            self.performSegue(withIdentifier: "toHome", sender: nil)
         }
+        
     }
     
     // ボタンのデザインを作成
@@ -72,8 +74,8 @@ extension UIViewController {
         let constInterval = 0.2 // 矢印のセルとセルの感覚
         let constEdge = 0.5 // セルの端とスクリーンの端との感覚
         // 各定数に応じたセルサイズの算出
-        let molecule = Double(screenWidth)
-        let denominator = (1 + constInterval) * Double(arrowNum) + 2 * constEdge - constInterval
+        let molecule = Double(screenWidth)  // 分子
+        let denominator = (1 + constInterval) * Double(arrowNum) + 2 * constEdge - constInterval    // 分母
         let cellWidth = molecule / denominator     // セルのサイズ
         // ラベルの初期位置、次のセルとの間隔を算出
         let x = constEdge * cellWidth

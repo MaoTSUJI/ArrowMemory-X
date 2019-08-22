@@ -81,8 +81,7 @@ class AnswerViewController: UIViewController {
 
         
         print("correctNumArray: \(correctNumArray)")
-        // Backボタンを削除
-        navigationController?.navigationBar.isHidden = true
+
     }
     
     // スワイプ、またはタップをした時の処理

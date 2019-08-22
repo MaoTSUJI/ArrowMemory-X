@@ -10,7 +10,10 @@ import UIKit
 import RevealingSplashView
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var titleImageView: UIImageView!
+    @IBOutlet weak var logoImageView: UIImageView!
+    
     @IBOutlet weak var easyButton: UIButton!
     @IBOutlet weak var normalButton: UIButton!
     @IBOutlet weak var difficultButton: UIButton!
@@ -19,53 +22,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var normalLevelLabel: UILabel!
     @IBOutlet weak var difficultLevelLabel: UILabel!
     
-    let levelArray = ["easy": 3, "normal": 5, "difficult": 7]
+    let levelArray = ["easy": 5, "normal": 7, "difficult": 10]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // ラベル
+        let titleImage = UIImage(named: "title")
+        titleImageView.image = titleImage
+        
+        let logoImage = UIImage(named: "splashImage")
+        logoImageView.image = logoImage
         
         // 各ボタンのデザインを設定
         makeButtonDesign(button: easyButton)
         makeButtonDesign(button: normalButton)
         makeButtonDesign(button: difficultButton)
         
-        // アプリ起動時のみ、スプラッシュメソッドを実行
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(
-            self,
-            selector: Selector(("setSplashAnimation")),
-            name:UIApplication.didFinishLaunchingNotification,
-            object: nil
-        )
-        
         // レベルに合わせて星のアイコンを表示
-        let starSolid = String.fontAwesomeIcon(name: .star)
-        let styleSolid = UIFont.fontAwesome(ofSize: CGFloat(20), style: .solid)
-        
-        
-        let starRegular = String.fontAwesomeIcon(name: .star)
-        let styleRegular = UIFont.fontAwesome(ofSize: CGFloat(20), style: .regular)
-
-        var stars = ""
-        let num = levelArray["easy"]!
-        
-        for i in 0 ..< 7 {
-            if i < num {
-                stars += starSolid
-            } else {
-                stars += starRegular
-            }
-        }
-        
-        easyLevelLabel.font = styleSolid
-        easyLevelLabel.text = stars
-        
-        normalLevelLabel.font = styleSolid
-        normalLevelLabel.text = stars
-        
-        difficultLevelLabel.font = styleSolid
-        difficultLevelLabel.text = stars
-        
+        makeLevelLabel(label: easyLevelLabel, level: "easy")
+        makeLevelLabel(label: normalLevelLabel, level: "normal")
+        makeLevelLabel(label: difficultLevelLabel, level: "difficult")
         
     }
     
@@ -96,6 +73,23 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "toQuiz", sender: inputValue)
     }
     
+    // レベルに合わせて星のアイコンを設置
+    func makeLevelLabel(label: UILabel, level: String) {
+        
+        var stars = ""
+        let num = levelArray[level]!
+        let starSolid = String.fontAwesomeIcon(name: .star)
+        let styleSolid = UIFont.fontAwesome(ofSize: CGFloat(20), style: .solid)
+        
+        for _ in 0 ..< num {
+            stars += starSolid
+        }
+        
+        label.font = styleSolid
+        label.textColor = Color().pastelYellow
+        label.text = stars
+        
+    }
     
 }
 
