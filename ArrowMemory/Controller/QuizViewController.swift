@@ -8,12 +8,17 @@
 
 import UIKit
 import FontAwesome_swift
+import Firebase
 
 class QuizViewController: UIViewController {
     
     @IBOutlet weak var quizImageView: UIImageView!
     
     @IBOutlet weak var okButton: UIButton!
+
+    @IBOutlet weak var bannerView: GADBannerView!
+    
+    let admobId = "ca-app-pub-3940256099942544/2934735716"
     
     var arrowNum = 3    // 前の画面から持ってきた値, レベルに応じた矢印の数3,5,7
     var arrowRandomArray:[String] = []
@@ -56,6 +61,11 @@ class QuizViewController: UIViewController {
         for i in 0..<labelArray.count {
             makeLabelContent(label: labelArray[i] as? UILabel, cellWidth: Double((labelArray[i] as! UILabel).bounds.height), arrowId: i, arrowArray: arrowRandomArray)
         }
+        
+        // バナー広告
+        bannerView.adUnitID = admobId
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
         
     }
     

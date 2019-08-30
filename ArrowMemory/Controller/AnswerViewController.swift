@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
 class AnswerViewController: UIViewController {
     
     @IBOutlet weak var answerImageView: UIImageView!
     @IBOutlet weak var resultButton: UIButton!
     @IBOutlet weak var swipeSpaceLabel: UILabel!
+    
+    @IBOutlet weak var bannerView: GADBannerView!
+    // バナーID
+    let admobId = "ca-app-pub-3940256099942544/2934735716"
     
     // 前のページから受け取る値
     var value:[[Any]] = []
@@ -79,6 +84,10 @@ class AnswerViewController: UIViewController {
             
         }
 
+        // バナー広告
+        bannerView.adUnitID = admobId
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
         
         print("correctNumArray: \(correctNumArray)")
 

@@ -16,6 +16,7 @@
 		6D43386B22E1415E00468898 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D43386922E1415E00468898 /* LaunchScreen.storyboard */; };
 		6D4338B522E2864200468898 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4338B422E2864200468898 /* QuizViewController.swift */; };
 		6D6B77732307EA74009A33B8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B77722307EA74009A33B8 /* Color.swift */; };
+		6D70884C2318C366007E8952 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D70884B2318C366007E8952 /* GoogleService-Info.plist */; };
 		6D83D41F22E28D2900AD6F1C /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D83D41E22E28D2900AD6F1C /* AnswerViewController.swift */; };
 		6D83D42122E290C400AD6F1C /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D83D42022E290C400AD6F1C /* ResultViewController.swift */; };
 		6DF2BDD423065E0E002AFDAD /* ButtonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF2BDD323065E0E002AFDAD /* ButtonUtils.swift */; };
@@ -36,6 +37,7 @@
 		6D43386C22E1415E00468898 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D4338B422E2864200468898 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		6D6B77722307EA74009A33B8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		6D70884B2318C366007E8952 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6D83D41E22E28D2900AD6F1C /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		6D83D42022E290C400AD6F1C /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		6DF2BDD323065E0E002AFDAD /* ButtonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUtils.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				6D43386C22E1415E00468898 /* Info.plist */,
 				6DF2BDD323065E0E002AFDAD /* ButtonUtils.swift */,
 				6DF2BDD523065E40002AFDAD /* UIViewController+.swift */,
+				6D70884B2318C366007E8952 /* GoogleService-Info.plist */,
 			);
 			path = ArrowMemory;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D43386B22E1415E00468898 /* LaunchScreen.storyboard in Resources */,
+				6D70884C2318C366007E8952 /* GoogleService-Info.plist in Resources */,
 				6D43386822E1415E00468898 /* Assets.xcassets in Resources */,
 				6D43386622E1415B00468898 /* Main.storyboard in Resources */,
 			);
