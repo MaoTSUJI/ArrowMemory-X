@@ -68,7 +68,7 @@ class ResultViewController: UIViewController {
             }
         }
         
-        resultLabel.text = "\(yourNumArray.count)問中\(correctCount)問正解！"
+        resultLabel.text = "\(yourNumArray.count)個中\(correctCount)個正解！"
 //        commentLabel.text = sayComment(count: correctCount)
 
         // ラベルのセルを作成
@@ -108,9 +108,15 @@ class ResultViewController: UIViewController {
     
     @IBAction func didClickTweet(_ sender: UIButton) {
         
-        let data = ["\(yourNumArray.count)問中\(correctCount)問正解！"] as [Any]
+        let description1 = "#覚えてシュっ"
+        let description2 = "#脳トレアプリ"
+        let appName = "#ArrowMemory"
+        let url = "https://apps.apple.com/app/id1477570525"
+        let data = ["\(yourNumArray.count)個中\(correctCount)個正解！ \n \(url)\n \(appName)\(description1)\(description2)"] as [Any]
         
         let controller = UIActivityViewController(activityItems: data, applicationActivities: nil)
+        controller.popoverPresentationController?.sourceView = view
+        controller.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.size.width / 2.0, y: self.view.bounds.size.height / 2.0, width: 1.0, height: 1.0)
         
         present(controller, animated: true, completion: nil)
 
