@@ -619,7 +619,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="IXm-WP-LGt"/>
         <segue reference="jN6-ag-cW3"/>
-        <segue reference="Xan-ah-BtJ"/>
+        <segue reference="nXh-FM-gAI"/>
     </inferredMetricsTieBreakers>
 </document>

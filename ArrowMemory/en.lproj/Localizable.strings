@@ -9,12 +9,15 @@
 "normal" = "normal";
 "hard" = "hard";
 "gameDescription" = "Memorize the arrows and Swipe!";
+"quizLabel" = "quizLabel_eng";
 "quizDescription" = "Memorize the direction of the arrows from left";
 "remember" = "Done!";
 "back" = "Back";
+"answerLabel" = "answerLabel_eng";
 "result" = "see Result";
 "answerDescription" = "Swipe the direction of the arrows";
 "swipeHere" = "Swipe Here!";
+"resultLabel" = "resultLabel_eng";
 "resultDescription" = "%d of %d correct answers";
 "correctAnswer" = "correct Answer";
 "yourAnswer" = "your Answer";

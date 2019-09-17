@@ -9,12 +9,15 @@
 "normal" = "ふつう";
 "hard" = "むずかしい";
 "gameDescription" = "矢印の方向を覚えてスワイプ！";
+"quizLabel" = "quizLabel";
 "quizDescription" = "矢印の方向を左から覚えてください";
 "remember" = "おぼえた!";
 "back" = "もどる";
+"answerLabel" = "answerLabel";
 "result" = "結果発表";
 "answerDescription" = "覚えた矢印の方向にスワイプ してください";
 "swipeHere" = "ここでスワイプ ";
+"resultLabel" = "resultLabel";
 "resultDescription" = "%d問正解 (全%問中)";
 "correctAnswer" = "正解";
 "yourAnswer" = "あなたの答え";

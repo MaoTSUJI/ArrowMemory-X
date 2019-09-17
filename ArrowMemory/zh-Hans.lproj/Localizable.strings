@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  ArrowMemory
+
+  Created by 辻真緒 on 2019/09/16.
+  Copyright © 2019 辻真緒. All rights reserved.
+*/
+"easy" = "简单";
+"normal" = "普通";
+"hard" = "难";
+"gameDescription" = "记住箭头方向并滑动!";
+"quizLabel" = "quizLabel_ch";
+"quizDescription" = "从左边开始记箭头方向";
+"remember" = "Done!";
+"back" = "Back";
+"answerLabel" = "answerLabel_ch";
+"result" = "成绩";
+"answerDescription" = "沿箭头方向滑动";
+"swipeHere" = "在此滑动!";
+"resultLabel" = "resultLabel_ch";
+"resultDescription" = "答对 %d 道 (%d 道问题中)";
+"correctAnswer" = "正确答案";
+"yourAnswer" = "你的回答";
+"again" = "再玩一次";
+"goToHome" = "返回主页";
+"share" = "分享";
+

@@ -41,7 +41,7 @@ class QuizViewController: UIViewController {
         backButton.setTitle(NSLocalizedString("back", comment: ""), for: .normal)
         
         // ラベル
-        let quizImage = UIImage(named: "quizLabel")
+        let quizImage = UIImage(named: NSLocalizedString("quizLabel", comment: ""))
         quizImageView.image = quizImage
         
         makeButtonDesign(button: okButton)

@@ -48,7 +48,7 @@ class AnswerViewController: UIViewController {
         resultButton.setTitle(NSLocalizedString("result", comment: ""), for: .normal)
         
         // ラベル
-        let answerImage = UIImage(named: "answerLabel")
+        let answerImage = UIImage(named: NSLocalizedString("answerLabel", comment: ""))
         answerImageView.image = answerImage
         
         // スワイプする場所のデザイン

@@ -51,7 +51,7 @@ class ResultViewController: UIViewController {
         shareButton.setTitle(NSLocalizedString("share", comment: ""), for: .normal)
         
         // 結果発表
-        let resultImage = UIImage(named: "resultLabel")
+        let resultImage = UIImage(named: NSLocalizedString("resultLabel", comment: ""))
         resultImageView.image = resultImage
                     
         let brainImage = UIImage(named: "brain")

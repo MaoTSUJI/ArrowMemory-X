@@ -51,6 +51,7 @@
 		6DFC2CA623307064002C15C3 /* bgEffect.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = bgEffect.sks; sourceTree = "<group>"; };
 		6DFC2CA723307064002C15C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6DFC2CAC23307A25002C15C3 /* BgEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BgEffect.swift; sourceTree = "<group>"; };
+		6DFC2CAE23311345002C15C3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		76B1FC550966C1BDB1023BEB /* Pods-ArrowMemory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArrowMemory.debug.xcconfig"; path = "Target Support Files/Pods-ArrowMemory/Pods-ArrowMemory.debug.xcconfig"; sourceTree = "<group>"; };
 		C0FACB3BE7B9A530ED20C942 /* Pods_ArrowMemory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArrowMemory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2530E8DB6B885649FFE29E1 /* Pods-190719_homework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-190719_homework.release.xcconfig"; path = "Target Support Files/Pods-190719_homework/Pods-190719_homework.release.xcconfig"; sourceTree = "<group>"; };
@@ -192,6 +193,7 @@
 				Base,
 				en,
 				ja,
+				"zh-Hans",
 			);
 			mainGroup = 6D43385422E1415B00468898;
 			productRefGroup = 6D43385E22E1415B00468898 /* Products */;
@@ -315,6 +317,7 @@
 			children = (
 				6DFC2CA3232F284F002C15C3 /* en */,
 				6DFC2CA5232F28CE002C15C3 /* ja */,
+				6DFC2CAE23311345002C15C3 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
