@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  ArrowMemory
+
+  Created by 辻真緒 on 2019/09/16.
+  Copyright © 2019 辻真緒. All rights reserved.
+*/
+"easy" = "easy";
+"normal" = "normal";
+"hard" = "hard";
+"gameDescription" = "Memorize the arrows and Swipe!";
+"quizDescription" = "Memorize the direction of the arrows from left";
+"remember" = "Done!";
+"back" = "Back";
+"result" = "see Result";
+"answerDescription" = "Swipe the direction of the arrows";
+"swipeHere" = "Swipe Here!";
+"resultDescription" = "%d of %d correct answers";
+"correctAnswer" = "correct Answer";
+"yourAnswer" = "your Answer";
+"again" = "again";
+"goToHome" = "Home";
+"share" = "Share";
+

@@ -16,16 +16,24 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var easyButton: UIButton!
     @IBOutlet weak var normalButton: UIButton!
-    @IBOutlet weak var difficultButton: UIButton!
+    @IBOutlet weak var hardButton: UIButton!
     
     @IBOutlet weak var easyLevelLabel: UILabel!
     @IBOutlet weak var normalLevelLabel: UILabel!
-    @IBOutlet weak var difficultLevelLabel: UILabel!
+    @IBOutlet weak var hardLevelLabel: UILabel!
     
-    let levelArray = ["easy": 5, "normal": 7, "difficult": 10]
+    @IBOutlet weak var gameDescriptionLabel: UILabel!
+    
+    
+    let levelArray = ["easy": 5, "normal": 7, "hard": 10]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        easyButton.setTitle(NSLocalizedString("easy", comment: ""), for: .normal)
+        normalButton.setTitle(NSLocalizedString("normal", comment: ""), for: .normal)
+        hardButton.setTitle(NSLocalizedString("hard", comment: ""), for: .normal)
+        gameDescriptionLabel.text = NSLocalizedString("gameDescription", comment: "")
         
         // ラベル
         let titleImage = UIImage(named: "title")
@@ -35,14 +43,15 @@ class ViewController: UIViewController {
         logoImageView.image = logoImage
         
         // 各ボタンのデザインを設定
+
         makeButtonDesign(button: easyButton)
         makeButtonDesign(button: normalButton)
-        makeButtonDesign(button: difficultButton)
+        makeButtonDesign(button: hardButton)
         
         // レベルに合わせて星のアイコンを表示
         makeLevelLabel(label: easyLevelLabel, level: "easy")
         makeLevelLabel(label: normalLevelLabel, level: "normal")
-        makeLevelLabel(label: difficultLevelLabel, level: "difficult")
+        makeLevelLabel(label: hardLevelLabel, level: "hard")
         
     }
     
@@ -55,8 +64,8 @@ class ViewController: UIViewController {
         goToQuiz(level: "normal")
     }
     
-    @IBAction func didClickDifficult(_ sender: UIButton) {
-        goToQuiz(level: "difficult")
+    @IBAction func didClickHard(_ sender: UIButton) {
+        goToQuiz(level: "hard")
     }
     
     
@@ -90,6 +99,10 @@ class ViewController: UIViewController {
         label.text = stars
         
     }
+    
+    
+    
+    
     
 }
 

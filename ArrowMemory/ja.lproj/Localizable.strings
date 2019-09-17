@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  ArrowMemory
+
+  Created by 辻真緒 on 2019/09/16.
+  Copyright © 2019 辻真緒. All rights reserved.
+*/
+"easy" = "かんたん";
+"normal" = "ふつう";
+"hard" = "むずかしい";
+"gameDescription" = "矢印の方向を覚えてスワイプ！";
+"quizDescription" = "矢印の方向を左から覚えてください";
+"remember" = "おぼえた!";
+"back" = "もどる";
+"result" = "結果発表";
+"answerDescription" = "覚えた矢印の方向にスワイプ してください";
+"swipeHere" = "ここでスワイプ ";
+"resultDescription" = "%d問正解 (全%問中)";
+"correctAnswer" = "正解";
+"yourAnswer" = "あなたの答え";
+"again" = "もう一度";
+"goToHome" = "ホーム";
+"share" = "シェア";

@@ -21,5 +21,7 @@ target 'ArrowMemory' do
 
   pod 'Firebase/AdMob'
 
+  pod 'Google-Mobile-Ads-SDK'
+
 
 end

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SpriteKit
 
 class ResultViewController: UIViewController {
     
@@ -14,15 +15,19 @@ class ResultViewController: UIViewController {
     
     @IBOutlet weak var resultLabel: UILabel!
     
+    @IBOutlet weak var correctAnswerLabel: UILabel!
+    @IBOutlet weak var yourAnswerLabel: UILabel!
+    
     @IBOutlet weak var brainImageView: UIImageView!
     @IBOutlet weak var correctNumImageView: UIImageView!
     @IBOutlet weak var NumImageView: UIImageView!
     
     @IBOutlet weak var replyButton: UIButton!
     @IBOutlet weak var homeButton: UIButton!
-    @IBOutlet weak var designLabel: UILabel!
+    @IBOutlet weak var shareButton: UIButton!
     
-    @IBOutlet weak var tweetButton: UIButton!
+    // 背景エフェクトで使うView
+    @IBOutlet weak var skView: SKView!
     
     // 前のページから受け取る変数を用意
     var arrayValue:[[Int]] = [[],[]]
@@ -38,13 +43,12 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-//        let starSolid = String.fontAwesomeIcon(name: .star)
-//        let styleSolid = UIFont.fontAwesome(ofSize: CGFloat(20), style: .solid)
-//
-//        tweetButton.font = styleSolid
-//        tweetButton.textColor = Color().pastelYellow
-//        tweetButton.text = starSolid
+        // ラベル、テキストの多言語対応
+        correctAnswerLabel.text = NSLocalizedString("correctAnswer", comment: "")
+        yourAnswerLabel.text = NSLocalizedString("yourAnswer", comment: "")
+        replyButton.setTitle(NSLocalizedString("again", comment: ""), for: .normal)
+        homeButton.setTitle(NSLocalizedString("goToHome", comment: ""), for: .normal)
+        shareButton.setTitle(NSLocalizedString("share", comment: ""), for: .normal)
         
         // 結果発表
         let resultImage = UIImage(named: "resultLabel")
@@ -61,6 +65,7 @@ class ResultViewController: UIViewController {
         yourNumArray = arrayValue[1]    // あなたの答え
         
         print(correctNumArray.count, yourNumArray.count)
+        
         // 正答数をカウント
         for i in 0...(yourNumArray.count - 1) {
             if yourNumArray[i] == correctNumArray[i] {
@@ -68,8 +73,13 @@ class ResultViewController: UIViewController {
             }
         }
         
-        resultLabel.text = "\(yourNumArray.count)個中\(correctCount)個正解！"
-//        commentLabel.text = sayComment(count: correctCount)
+//        resultLabel.text = "\(yourNumArray.count)個中\(correctCount)個正解！"
+        
+        // 結果発表　何個正解（全何問中）
+        resultLabel.text = String(format: NSLocalizedString("resultDescription", comment: ""), correctCount, yourNumArray.count)
+        
+        // 全問正解だった場合、Spriteでエフェクトを表示
+  
 
         // ラベルのセルを作成
         correctAnswerLabelArray = makeLabel(arrowNum: correctNumArray.count, heightLabelRate: 0.5)
@@ -96,7 +106,6 @@ class ResultViewController: UIViewController {
             
         }
         
-        
         // 正答率を画像で表示
         let correctNumImage = UIImage(named: showResultNumber(num: correctCount))
         correctNumImageView.image = correctNumImage
@@ -106,7 +115,20 @@ class ResultViewController: UIViewController {
         
     }
     
-    @IBAction func didClickTweet(_ sender: UIButton) {
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        showParticle()
+    }
+    
+    // 全問正解だったら背景エフェクトを表示
+    func showParticle() {
+        let scene = BgEffect(size: skView.frame.size)
+        skView.ignoresSiblingOrder = true
+        scene.scaleMode = .aspectFill
+        skView.presentScene(scene)
+    }
+    
+    @IBAction func didClickShare(_ sender: UIButton) {
         
         let description1 = "#覚えてシュっ"
         let description2 = "#脳トレアプリ"
@@ -115,6 +137,7 @@ class ResultViewController: UIViewController {
         let data = ["\(yourNumArray.count)個中\(correctCount)個正解！ \n \(url)\n \(appName)\(description1)\(description2)"] as [Any]
         
         let controller = UIActivityViewController(activityItems: data, applicationActivities: nil)
+        // iPadでシェアするとき、これがないとエラーになる
         controller.popoverPresentationController?.sourceView = view
         controller.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.size.width / 2.0, y: self.view.bounds.size.height / 2.0, width: 1.0, height: 1.0)
         

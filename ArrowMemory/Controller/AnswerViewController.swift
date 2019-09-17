@@ -12,12 +12,14 @@ import Firebase
 class AnswerViewController: UIViewController {
     
     @IBOutlet weak var answerImageView: UIImageView!
-    @IBOutlet weak var resultButton: UIButton!
+    @IBOutlet weak var answerDescriptionLabel: UILabel!
     @IBOutlet weak var swipeSpaceLabel: UILabel!
+    
+    @IBOutlet weak var resultButton: UIButton!
     
     @IBOutlet weak var bannerView: GADBannerView!
     // バナーID
-    let admobId = "ca-app-pub-3940256099942544/2934735716"
+    let admobId = "ca-app-pub-4793875012538951/7205085339"
     
     // 前のページから受け取る値
     var value:[[Any]] = []
@@ -26,7 +28,6 @@ class AnswerViewController: UIViewController {
     var correctNumArray:[Int] = []
     var arrowNum:Int = 3
 
-    
     // あなたの回答の配列番号
     var yourNumArray:[Int] = []
     // スワイプまたはタップされた回数をカウントする変数
@@ -40,6 +41,11 @@ class AnswerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // ラベル、テキストの多言語対応
+        answerDescriptionLabel.text = NSLocalizedString("answerDescription", comment: "")
+        swipeSpaceLabel.text = NSLocalizedString("swipeHere", comment: "")
+        resultButton.setTitle(NSLocalizedString("result", comment: ""), for: .normal)
         
         // ラベル
         let answerImage = UIImage(named: "answerLabel")

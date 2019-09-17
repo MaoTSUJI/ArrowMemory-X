@@ -13,7 +13,6 @@
 		6D43386322E1415B00468898 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D43386222E1415B00468898 /* ViewController.swift */; };
 		6D43386622E1415B00468898 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D43386422E1415B00468898 /* Main.storyboard */; };
 		6D43386822E1415E00468898 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D43386722E1415E00468898 /* Assets.xcassets */; };
-		6D43386B22E1415E00468898 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D43386922E1415E00468898 /* LaunchScreen.storyboard */; };
 		6D4338B522E2864200468898 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4338B422E2864200468898 /* QuizViewController.swift */; };
 		6D6B77732307EA74009A33B8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B77722307EA74009A33B8 /* Color.swift */; };
 		6D70884C2318C366007E8952 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D70884B2318C366007E8952 /* GoogleService-Info.plist */; };
@@ -22,6 +21,10 @@
 		6DF2BDD423065E0E002AFDAD /* ButtonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF2BDD323065E0E002AFDAD /* ButtonUtils.swift */; };
 		6DF2BDD623065E40002AFDAD /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF2BDD523065E40002AFDAD /* UIViewController+.swift */; };
 		6DF2BDDA230660FE002AFDAD /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF2BDD9230660FE002AFDAD /* Arrow.swift */; };
+		6DFC2CA2232F284F002C15C3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC2CA4232F284F002C15C3 /* Localizable.strings */; };
+		6DFC2CA823307064002C15C3 /* bgEffect.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC2CA623307064002C15C3 /* bgEffect.sks */; };
+		6DFC2CA923307064002C15C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC2CA723307064002C15C3 /* Assets.xcassets */; };
+		6DFC2CAD23307A25002C15C3 /* BgEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFC2CAC23307A25002C15C3 /* BgEffect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,16 +36,21 @@
 		6D43386222E1415B00468898 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6D43386522E1415B00468898 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D43386722E1415E00468898 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6D43386A22E1415E00468898 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D43386C22E1415E00468898 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D4338B422E2864200468898 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		6D6B77722307EA74009A33B8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		6D70884B2318C366007E8952 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6D83D41E22E28D2900AD6F1C /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		6D83D42022E290C400AD6F1C /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		6DD51AE0232B484F00F36E60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		6DF2BDD323065E0E002AFDAD /* ButtonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUtils.swift; sourceTree = "<group>"; };
 		6DF2BDD523065E40002AFDAD /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		6DF2BDD9230660FE002AFDAD /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
+		6DFC2CA3232F284F002C15C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6DFC2CA5232F28CE002C15C3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6DFC2CA623307064002C15C3 /* bgEffect.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = bgEffect.sks; sourceTree = "<group>"; };
+		6DFC2CA723307064002C15C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6DFC2CAC23307A25002C15C3 /* BgEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BgEffect.swift; sourceTree = "<group>"; };
 		76B1FC550966C1BDB1023BEB /* Pods-ArrowMemory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArrowMemory.debug.xcconfig"; path = "Target Support Files/Pods-ArrowMemory/Pods-ArrowMemory.debug.xcconfig"; sourceTree = "<group>"; };
 		C0FACB3BE7B9A530ED20C942 /* Pods_ArrowMemory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArrowMemory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2530E8DB6B885649FFE29E1 /* Pods-190719_homework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-190719_homework.release.xcconfig"; path = "Target Support Files/Pods-190719_homework/Pods-190719_homework.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,7 +113,7 @@
 				6D43386022E1415B00468898 /* AppDelegate.swift */,
 				6D43386422E1415B00468898 /* Main.storyboard */,
 				6D43386722E1415E00468898 /* Assets.xcassets */,
-				6D43386922E1415E00468898 /* LaunchScreen.storyboard */,
+				6DFC2CA4232F284F002C15C3 /* Localizable.strings */,
 				6D43386C22E1415E00468898 /* Info.plist */,
 				6DF2BDD323065E0E002AFDAD /* ButtonUtils.swift */,
 				6DF2BDD523065E40002AFDAD /* UIViewController+.swift */,
@@ -130,6 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				6DF2BDD9230660FE002AFDAD /* Arrow.swift */,
+				6DFC2CA623307064002C15C3 /* bgEffect.sks */,
+				6DFC2CAC23307A25002C15C3 /* BgEffect.swift */,
+				6DFC2CA723307064002C15C3 /* Assets.xcassets */,
 				6D6B77722307EA74009A33B8 /* Color.swift */,
 			);
 			path = Objects;
@@ -178,8 +189,9 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
+				ja,
 			);
 			mainGroup = 6D43385422E1415B00468898;
 			productRefGroup = 6D43385E22E1415B00468898 /* Products */;
@@ -196,9 +208,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D43386B22E1415E00468898 /* LaunchScreen.storyboard in Resources */,
+				6DFC2CA2232F284F002C15C3 /* Localizable.strings in Resources */,
 				6D70884C2318C366007E8952 /* GoogleService-Info.plist in Resources */,
 				6D43386822E1415E00468898 /* Assets.xcassets in Resources */,
+				6DFC2CA823307064002C15C3 /* bgEffect.sks in Resources */,
+				6DFC2CA923307064002C15C3 /* Assets.xcassets in Resources */,
 				6D43386622E1415B00468898 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +289,7 @@
 				6D83D42122E290C400AD6F1C /* ResultViewController.swift in Sources */,
 				6DF2BDD423065E0E002AFDAD /* ButtonUtils.swift in Sources */,
 				6D83D41F22E28D2900AD6F1C /* AnswerViewController.swift in Sources */,
+				6DFC2CAD23307A25002C15C3 /* BgEffect.swift in Sources */,
 				6D3BEC83230A4FA800A73B86 /* StartViewController.swift in Sources */,
 				6D4338B522E2864200468898 /* QuizViewController.swift in Sources */,
 				6D43386322E1415B00468898 /* ViewController.swift in Sources */,
@@ -290,16 +305,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				6D43386522E1415B00468898 /* Base */,
+				6DD51AE0232B484F00F36E60 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		6D43386922E1415E00468898 /* LaunchScreen.storyboard */ = {
+		6DFC2CA4232F284F002C15C3 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6D43386A22E1415E00468898 /* Base */,
+				6DFC2CA3232F284F002C15C3 /* en */,
+				6DFC2CA5232F28CE002C15C3 /* ja */,
 			);
-			name = LaunchScreen.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -309,6 +326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -370,6 +388,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -426,6 +445,7 @@
 			baseConfigurationReference = 76B1FC550966C1BDB1023BEB /* Pods-ArrowMemory.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ASWZUJW45Z;
 				INFOPLIST_FILE = ArrowMemory/Info.plist;
@@ -445,6 +465,7 @@
 			baseConfigurationReference = 1683EC0AE1C9F82F7B5C53A2 /* Pods-ArrowMemory.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ASWZUJW45Z;
 				INFOPLIST_FILE = ArrowMemory/Info.plist;

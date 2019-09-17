@@ -58,7 +58,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="むずかしい"/>
                                 <connections>
-                                    <action selector="didClickDifficult:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h8J-Wp-MmH"/>
+                                    <action selector="didClickHard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h8J-Wp-MmH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qA8-iq-60Y">
@@ -116,9 +116,9 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="矢印の方向を覚えてスワイプ！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52F-4o-eG8">
-                                <rect key="frame" x="245" y="344" width="278" height="36"/>
+                                <rect key="frame" x="0.0" y="266" width="375" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="8k2-DO-NXd"/>
+                                    <constraint firstAttribute="width" constant="360" id="8k2-DO-NXd"/>
                                     <constraint firstAttribute="height" constant="36" id="NZw-xo-Cgd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -153,10 +153,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="PYx-gp-QfG"/>
                     <connections>
-                        <outlet property="difficultButton" destination="ibb-ja-cPB" id="AwA-Vy-6d3"/>
-                        <outlet property="difficultLevelLabel" destination="W6L-Ub-ZsT" id="USz-i9-Scw"/>
                         <outlet property="easyButton" destination="qA8-iq-60Y" id="qAe-sK-8s0"/>
                         <outlet property="easyLevelLabel" destination="i9v-VB-JFX" id="0Rj-7T-nNQ"/>
+                        <outlet property="gameDescriptionLabel" destination="52F-4o-eG8" id="a3c-Rk-5gx"/>
+                        <outlet property="hardButton" destination="ibb-ja-cPB" id="AwA-Vy-6d3"/>
+                        <outlet property="hardLevelLabel" destination="W6L-Ub-ZsT" id="USz-i9-Scw"/>
                         <outlet property="logoImageView" destination="mf5-AZ-h2h" id="gdk-ID-wFa"/>
                         <outlet property="normalButton" destination="gdd-NI-eCU" id="hxF-Uj-wn0"/>
                         <outlet property="normalLevelLabel" destination="cqG-Jl-8j9" id="XEs-pJ-anm"/>
@@ -166,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1077.34375" y="133.0078125"/>
+            <point key="canvasLocation" x="1076" y="132.68365817091455"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="fMf-1s-3uc">
@@ -266,8 +267,10 @@
                         <viewLayoutGuide key="safeArea" id="DOb-0B-r7e"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="BBU-Qs-6iO" id="18t-Fa-rhd"/>
                         <outlet property="bannerView" destination="OYL-Im-tIK" id="kiX-HL-dcf"/>
                         <outlet property="okButton" destination="7Zg-hv-ZAq" id="GcA-4z-xy8"/>
+                        <outlet property="quizDescriptionLabel" destination="6TV-rx-NZ5" id="QyZ-h5-OBl"/>
                         <outlet property="quizImageView" destination="E91-gv-Y3R" id="VwW-69-w0W"/>
                         <segue destination="0L3-dm-tWV" kind="show" identifier="toAnswer" id="IXm-WP-LGt"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToBack" id="nXh-FM-gAI"/>
@@ -377,6 +380,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="answerDescriptionLabel" destination="pXh-Ww-emA" id="tSZ-ad-lgn"/>
                         <outlet property="answerImageView" destination="kw7-sV-znv" id="QOb-Cx-NkQ"/>
                         <outlet property="bannerView" destination="9Yb-dp-10Z" id="cog-ag-WrT"/>
                         <outlet property="resultButton" destination="uo0-gH-SUe" id="SE8-VP-MNB"/>
@@ -416,6 +420,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <skView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1VF-MV-eJ1">
+                                <rect key="frame" x="26" y="147" width="322" height="373"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </skView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zws-wJ-aDY" userLabel="View2">
                                 <rect key="frame" x="0.0" y="120" width="375" height="213.5"/>
                                 <subviews>
@@ -544,7 +552,7 @@
                                 </constraints>
                                 <state key="normal" title="シェア"/>
                                 <connections>
-                                    <action selector="didClickTweet:" destination="gDV-gV-Bfh" eventType="touchUpInside" id="bw5-rv-oMT"/>
+                                    <action selector="didClickShare:" destination="gDV-gV-Bfh" eventType="touchUpInside" id="bw5-rv-oMT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -574,19 +582,22 @@
                     <connections>
                         <outlet property="NumImageView" destination="WG3-vy-1J3" id="MUz-ax-3k4"/>
                         <outlet property="brainImageView" destination="obA-FU-CiW" id="1Ur-6s-kSd"/>
+                        <outlet property="correctAnswerLabel" destination="k1D-Of-1Nr" id="svd-K9-FD7"/>
                         <outlet property="correctNumImageView" destination="Qko-HP-E6A" id="3Lw-xe-vSQ"/>
                         <outlet property="homeButton" destination="jhd-JU-8iG" id="td9-Fr-ZLl"/>
                         <outlet property="replyButton" destination="Xa9-yo-KKr" id="3nA-m6-epg"/>
                         <outlet property="resultImageView" destination="ISI-c9-dz9" id="Zah-Tp-kmZ"/>
                         <outlet property="resultLabel" destination="iSY-sA-eXo" id="y1h-0b-hAE"/>
-                        <outlet property="tweetButton" destination="dB8-4o-YcK" id="SVI-c0-IKO"/>
+                        <outlet property="shareButton" destination="dB8-4o-YcK" id="SVI-c0-IKO"/>
+                        <outlet property="skView" destination="1VF-MV-eJ1" id="rvx-QT-8nU"/>
+                        <outlet property="yourAnswerLabel" destination="ilj-n5-lur" id="7mn-ST-rv4"/>
                         <segue destination="R5S-CV-5q1" kind="show" identifier="backToQuiz" id="jN6-ag-cW3"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="backToHome" id="Xan-ah-BtJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pjO-pG-FGW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3376.5625" y="133.59375"/>
+            <point key="canvasLocation" x="3375.1999999999998" y="133.5832083958021"/>
         </scene>
         <!--Start View Controller-->
         <scene sceneID="lQM-Qw-d1c">
@@ -608,7 +619,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mj4-dr-sYP"/>
-        <segue reference="nXh-FM-gAI"/>
+        <segue reference="jN6-ag-cW3"/>
+        <segue reference="Xan-ah-BtJ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -33,6 +33,7 @@ extension UIViewController {
     // ボタンのデザインを作成
     func makeButtonDesign(button: UIButton!) {
         /////////////////青色
+        
         //グラデーションの開始色
         let topColor = UIColor(red:118/255, green:184/255, blue:248/255, alpha:1)
         //グラデーションの終了色

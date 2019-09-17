@@ -13,12 +13,14 @@ import Firebase
 class QuizViewController: UIViewController {
     
     @IBOutlet weak var quizImageView: UIImageView!
-    
     @IBOutlet weak var okButton: UIButton!
-
+    @IBOutlet weak var backButton: UIButton!
+    
     @IBOutlet weak var bannerView: GADBannerView!
     
-    let admobId = "ca-app-pub-3940256099942544/2934735716"
+    @IBOutlet weak var quizDescriptionLabel: UILabel!
+    
+    let admobId = "ca-app-pub-4793875012538951/1659731726"
     
     var arrowNum = 3    // 前の画面から持ってきた値, レベルに応じた矢印の数3,5,7
     var arrowRandomArray:[String] = []
@@ -27,12 +29,16 @@ class QuizViewController: UIViewController {
     // 生成するラベルを入れる配列を用意
     var labelArray:[Any] = []
     
-    
     var arrowRandomArrayString:[String] = ["0","1","2"]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 多言語対応
+        quizDescriptionLabel.text = NSLocalizedString("quizDescription", comment: "")
+        okButton.setTitle(NSLocalizedString("remember", comment: ""), for: .normal)
+        backButton.setTitle(NSLocalizedString("back", comment: ""), for: .normal)
         
         // ラベル
         let quizImage = UIImage(named: "quizLabel")
