@@ -18,7 +18,7 @@
 "answerDescription" = "Swipe the direction of the arrows";
 "swipeHere" = "Swipe Here!";
 "resultLabel" = "resultLabel_eng";
-"resultDescription" = "%d of %d correct answers";
+"resultDescription" = " %d of %d correct answers";
 "correctAnswer" = "correct Answer";
 "yourAnswer" = "your Answer";
 "again" = "again";

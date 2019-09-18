@@ -420,10 +420,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <skView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1VF-MV-eJ1">
-                                <rect key="frame" x="26" y="147" width="322" height="373"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </skView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1h-xL-3yQ" customClass="SKView">
+                                <rect key="frame" x="0.0" y="75" width="375" height="592"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zws-wJ-aDY" userLabel="View2">
                                 <rect key="frame" x="0.0" y="120" width="375" height="213.5"/>
                                 <subviews>
@@ -459,7 +459,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="WG3-vy-1J3" firstAttribute="centerX" secondItem="Zws-wJ-aDY" secondAttribute="centerX" constant="12" id="JIx-h0-4SJ"/>
                                     <constraint firstItem="iSY-sA-eXo" firstAttribute="top" secondItem="Zws-wJ-aDY" secondAttribute="top" constant="12" id="Qie-mQ-awN"/>
@@ -495,7 +495,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ilj-n5-lur" firstAttribute="centerX" secondItem="zBM-W9-rFn" secondAttribute="centerX" id="B27-xT-B0w"/>
                                     <constraint firstItem="k1D-Of-1Nr" firstAttribute="centerX" secondItem="zBM-W9-rFn" secondAttribute="centerX" id="Nfg-wM-LzM"/>
@@ -537,7 +537,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="ISI-c9-dz9" secondAttribute="bottom" id="6sE-cx-sPy"/>
                                     <constraint firstItem="ISI-c9-dz9" firstAttribute="leading" secondItem="HT8-id-t5N" secondAttribute="leading" constant="60" id="BC4-q9-mPp"/>
@@ -559,6 +559,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Xa9-yo-KKr" firstAttribute="top" secondItem="zBM-W9-rFn" secondAttribute="bottom" id="4Z3-fa-9z8"/>
+                            <constraint firstItem="x1h-xL-3yQ" firstAttribute="leading" secondItem="W3o-Ag-gQL" secondAttribute="leading" id="9lq-tN-akh"/>
                             <constraint firstItem="zBM-W9-rFn" firstAttribute="top" secondItem="8nw-L9-cYp" secondAttribute="centerY" id="BzN-ag-GQ1"/>
                             <constraint firstItem="HT8-id-t5N" firstAttribute="height" secondItem="8nw-L9-cYp" secondAttribute="height" multiplier="0.18" id="E5v-oO-6Jy"/>
                             <constraint firstItem="HT8-id-t5N" firstAttribute="top" secondItem="8nw-L9-cYp" secondAttribute="top" id="Evs-0H-PO3"/>
@@ -568,6 +569,7 @@
                             <constraint firstItem="HT8-id-t5N" firstAttribute="trailing" secondItem="W3o-Ag-gQL" secondAttribute="trailing" id="Pcv-Yw-lB4"/>
                             <constraint firstItem="Zws-wJ-aDY" firstAttribute="top" secondItem="HT8-id-t5N" secondAttribute="bottom" id="Ral-lu-4sL"/>
                             <constraint firstItem="jhd-JU-8iG" firstAttribute="top" secondItem="Xa9-yo-KKr" secondAttribute="bottom" constant="12" id="S9Z-tP-l19"/>
+                            <constraint firstItem="x1h-xL-3yQ" firstAttribute="top" secondItem="W3o-Ag-gQL" secondAttribute="top" constant="55" id="ScA-nL-pJh"/>
                             <constraint firstItem="W3o-Ag-gQL" firstAttribute="trailing" secondItem="dB8-4o-YcK" secondAttribute="trailing" constant="36" id="XJE-WI-DPk"/>
                             <constraint firstItem="Zws-wJ-aDY" firstAttribute="height" secondItem="8nw-L9-cYp" secondAttribute="height" multiplier="0.32" id="YW6-c8-26q"/>
                             <constraint firstAttribute="trailing" secondItem="zBM-W9-rFn" secondAttribute="trailing" id="YsT-hT-tJd"/>
@@ -575,7 +577,9 @@
                             <constraint firstItem="jhd-JU-8iG" firstAttribute="centerX" secondItem="8nw-L9-cYp" secondAttribute="centerX" id="aK0-WR-Xx7"/>
                             <constraint firstItem="dB8-4o-YcK" firstAttribute="top" secondItem="zBM-W9-rFn" secondAttribute="bottom" id="lAh-IC-LXc"/>
                             <constraint firstItem="zBM-W9-rFn" firstAttribute="height" secondItem="8nw-L9-cYp" secondAttribute="height" multiplier="0.33" id="nH7-cI-tUx"/>
+                            <constraint firstItem="x1h-xL-3yQ" firstAttribute="bottom" secondItem="W3o-Ag-gQL" secondAttribute="bottom" id="tEh-Mv-di0"/>
                             <constraint firstItem="HT8-id-t5N" firstAttribute="leading" secondItem="W3o-Ag-gQL" secondAttribute="leading" id="uYG-3w-QiN"/>
+                            <constraint firstItem="x1h-xL-3yQ" firstAttribute="trailing" secondItem="W3o-Ag-gQL" secondAttribute="trailing" id="wZE-De-WxN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="W3o-Ag-gQL"/>
                     </view>
@@ -589,7 +593,7 @@
                         <outlet property="resultImageView" destination="ISI-c9-dz9" id="Zah-Tp-kmZ"/>
                         <outlet property="resultLabel" destination="iSY-sA-eXo" id="y1h-0b-hAE"/>
                         <outlet property="shareButton" destination="dB8-4o-YcK" id="SVI-c0-IKO"/>
-                        <outlet property="skView" destination="1VF-MV-eJ1" id="rvx-QT-8nU"/>
+                        <outlet property="skView" destination="x1h-xL-3yQ" id="2XP-yt-RSF"/>
                         <outlet property="yourAnswerLabel" destination="ilj-n5-lur" id="7mn-ST-rv4"/>
                         <segue destination="R5S-CV-5q1" kind="show" identifier="backToQuiz" id="jN6-ag-cW3"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="backToHome" id="Xan-ah-BtJ"/>
@@ -619,8 +623,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IXm-WP-LGt"/>
         <segue reference="jN6-ag-cW3"/>
-        <segue reference="nXh-FM-gAI"/>
+        <segue reference="Xan-ah-BtJ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,6 +16,7 @@
 		6D4338B522E2864200468898 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4338B422E2864200468898 /* QuizViewController.swift */; };
 		6D6B77732307EA74009A33B8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B77722307EA74009A33B8 /* Color.swift */; };
 		6D70884C2318C366007E8952 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D70884B2318C366007E8952 /* GoogleService-Info.plist */; };
+		6D8111942331C7FA00E7C38B /* MyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6D8111932331C7FA00E7C38B /* MyScene.sks */; };
 		6D83D41F22E28D2900AD6F1C /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D83D41E22E28D2900AD6F1C /* AnswerViewController.swift */; };
 		6D83D42122E290C400AD6F1C /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D83D42022E290C400AD6F1C /* ResultViewController.swift */; };
 		6DF2BDD423065E0E002AFDAD /* ButtonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF2BDD323065E0E002AFDAD /* ButtonUtils.swift */; };
@@ -40,6 +41,7 @@
 		6D4338B422E2864200468898 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		6D6B77722307EA74009A33B8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		6D70884B2318C366007E8952 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6D8111932331C7FA00E7C38B /* MyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene.sks; sourceTree = "<group>"; };
 		6D83D41E22E28D2900AD6F1C /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		6D83D42022E290C400AD6F1C /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		6DD51AE0232B484F00F36E60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			children = (
 				6DF2BDD9230660FE002AFDAD /* Arrow.swift */,
 				6DFC2CA623307064002C15C3 /* bgEffect.sks */,
+				6D8111932331C7FA00E7C38B /* MyScene.sks */,
 				6DFC2CAC23307A25002C15C3 /* BgEffect.swift */,
 				6DFC2CA723307064002C15C3 /* Assets.xcassets */,
 				6D6B77722307EA74009A33B8 /* Color.swift */,
@@ -215,6 +218,7 @@
 				6D43386822E1415E00468898 /* Assets.xcassets in Resources */,
 				6DFC2CA823307064002C15C3 /* bgEffect.sks in Resources */,
 				6DFC2CA923307064002C15C3 /* Assets.xcassets in Resources */,
+				6D8111942331C7FA00E7C38B /* MyScene.sks in Resources */,
 				6D43386622E1415B00468898 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

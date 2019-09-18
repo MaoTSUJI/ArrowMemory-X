@@ -113,18 +113,28 @@ class ResultViewController: UIViewController {
         let NumImage = UIImage(named: showResultNumber(num: yourNumArray.count))
         NumImageView.image = NumImage
         
+        
+        // 全問正解の時、背景エフェクトを表示
+        if correctCount == yourNumArray.count {
+            skView.allowsTransparency = true
+            skView.backgroundColor = .clear
+            showParticle()
+            
+        } else {
+            skView.removeFromSuperview()
+        }
+
+        
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        showParticle()
-    }
     
-    // 全問正解だったら背景エフェクトを表示
+    // 背景エフェクトを表示
     func showParticle() {
         let scene = BgEffect(size: skView.frame.size)
         skView.ignoresSiblingOrder = true
         scene.scaleMode = .aspectFill
+        // 背景を透過
+        scene.backgroundColor = .clear
         skView.presentScene(scene)
     }
     

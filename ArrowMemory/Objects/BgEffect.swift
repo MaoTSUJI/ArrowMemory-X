@@ -30,7 +30,11 @@ class BgEffect: SKScene {
     }
     
     override func willMove(from view: SKView) {
+        
         lightNode.removeFromParent()
+        // 背景色を透明にする.
+        self.backgroundColor = UIColor.clear
+        
     }
     
     func addPaper(){

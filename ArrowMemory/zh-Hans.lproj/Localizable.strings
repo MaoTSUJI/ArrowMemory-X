@@ -11,14 +11,14 @@
 "gameDescription" = "记住箭头方向并滑动!";
 "quizLabel" = "quizLabel_ch";
 "quizDescription" = "从左边开始记箭头方向";
-"remember" = "Done!";
-"back" = "Back";
+"remember" = "准备好了!";
+"back" = "返回";
 "answerLabel" = "answerLabel_ch";
 "result" = "成绩";
 "answerDescription" = "沿箭头方向滑动";
 "swipeHere" = "在此滑动!";
 "resultLabel" = "resultLabel_ch";
-"resultDescription" = "答对 %d 道 (%d 道问题中)";
+"resultDescription" = "答对 %d 道 ( %d 道问题中)";
 "correctAnswer" = "正确答案";
 "yourAnswer" = "你的回答";
 "again" = "再玩一次";
