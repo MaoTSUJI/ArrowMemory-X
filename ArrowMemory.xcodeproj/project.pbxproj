@@ -39,6 +39,7 @@
 		6D43386722E1415E00468898 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D43386C22E1415E00468898 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D4338B422E2864200468898 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		6D60AE9E2332BBC300D01F62 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6D6B77722307EA74009A33B8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		6D70884B2318C366007E8952 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6D8111932331C7FA00E7C38B /* MyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene.sks; sourceTree = "<group>"; };
@@ -197,6 +198,7 @@
 				en,
 				ja,
 				"zh-Hans",
+				"es-419",
 			);
 			mainGroup = 6D43385422E1415B00468898;
 			productRefGroup = 6D43385E22E1415B00468898 /* Products */;
@@ -322,6 +324,7 @@
 				6DFC2CA3232F284F002C15C3 /* en */,
 				6DFC2CA5232F28CE002C15C3 /* ja */,
 				6DFC2CAE23311345002C15C3 /* zh-Hans */,
+				6D60AE9E2332BBC300D01F62 /* es-419 */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
